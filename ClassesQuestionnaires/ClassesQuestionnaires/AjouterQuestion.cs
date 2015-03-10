@@ -119,21 +119,56 @@ namespace ClassesQuestionnaires
         {
             try
             {
+                String BRep, MRep1, MRep2, MRep3;
+                if (RB_Reponse1.Checked)
+                {
+                    BRep = TB_Reponse1.Text;
+                    MRep1 = TB_Reponse2.Text;
+                    MRep2 = TB_Reponse3.Text;
+                    MRep3 = TB_Reponse4.Text;
+                }
+                else if (RB_Reponse2.Checked)
+                {
+                    BRep = TB_Reponse2.Text;
+                    MRep1 = TB_Reponse1.Text;
+                    MRep2 = TB_Reponse3.Text;
+                    MRep3 = TB_Reponse4.Text;
+                }
+                else if (RB_Reponse3.Checked)
+                {
+                    BRep = TB_Reponse3.Text;
+                    MRep1 = TB_Reponse1.Text;
+                    MRep2 = TB_Reponse2.Text;
+                    MRep3 = TB_Reponse4.Text;
+                }
+                else
+                {
+                    BRep = TB_Reponse4.Text;
+                    MRep1 = TB_Reponse1.Text;
+                    MRep2 = TB_Reponse2.Text;
+                    MRep3 = TB_Reponse3.Text;
+                }
+
                 //GESTIONQUESTION.INSERTIONQUESTION('quel est ton nom ?', 'N', 'Xavier', 'Simon', 'Paul','tarte');
-                OracleCommand oraAjout = new OracleCommand("GESTIONQUESTION", connection);
-                oraAjout.CommandText = "GESTIONQUESTION.INSERTIONQUESTION";
+                OracleCommand oraAjout = new OracleCommand("PKG_QUESTION", connection);
+                oraAjout.CommandText = "PKG_QUESTION.INSERTIONQUESTION";
                 oraAjout.CommandType = CommandType.StoredProcedure;
 
                 //Déclaration des paramettres
                 OracleParameter procQuestion = new OracleParameter("PQUESTION", OracleDbType.Varchar2,250);
                 procQuestion.Direction = ParameterDirection.Input;
-                procQuestion.Value = TB_Question;
+                procQuestion.Value = TB_Question.Text;
                 oraAjout.Parameters.Add(procQuestion);
 
-                OracleParameter oraPnomEmp = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 50);
-                oraPnomEmp.Direction = ParameterDirection.Input;
-                oraPnomEmp.Value = TB_InsertNomEmp.Text;
-                oraAjout.Parameters.Add(oraPnomEmp);
+                OracleParameter procCategorie = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 50);
+                procCategorie.Direction = ParameterDirection.Input;
+                procCategorie.Value = CMB_Categories.ValueMember.ToString()[0];//retourne le premier caractère du string
+                oraAjout.Parameters.Add(procCategorie);
+
+                OracleParameter procBRep = new OracleParameter("REPONSE_BONNE", OracleDbType.Varchar2, 50);
+                procBRep.Direction = ParameterDirection.Input;
+                procBRep.Value = 
+                oraAjout.Parameters.Add(procBRep);
 
                 //Execution de la requête
                 oraAjout.ExecuteNonQuery();
