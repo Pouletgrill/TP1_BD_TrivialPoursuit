@@ -13,6 +13,7 @@ namespace ClassesQuestionnaires
 {
     public partial class Gestion : Form
     {
+        DataSet dataSet = new DataSet();
         OracleConnection connection;
         public Gestion(OracleConnection connectionx)
         {
@@ -23,6 +24,7 @@ namespace ClassesQuestionnaires
         private void Gestion_Load(object sender, EventArgs e)
         {
             ConnexionAdmin();
+            RefreshDGVQuestion();
         }
 
         public void ConnexionAdmin()
@@ -35,10 +37,65 @@ namespace ClassesQuestionnaires
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        public void RefreshDGVQuestion()
+        {
+            try
+            {
+                // //déclaration de OracleCommand pour appeler la fonction avec la
+                //connection conn.
+                OracleCommand Oracmd = new OracleCommand("PKG_GESTION",
+                connection);
+                Oracmd.CommandText = "PKG_GESTION.AFFICHERQUESTION";
+                Oracmd.CommandType = CommandType.StoredProcedure;
+                // pour une fonction, le paramètre de retour doit être déclaré en
+                //premier.
+                OracleParameter OrapameResultat = new
+                OracleParameter("CURSORGESTION", OracleDbType.RefCursor);
+                OrapameResultat.Direction = ParameterDirection.ReturnValue;
+                Oracmd.Parameters.Add(OrapameResultat);
+
+                // Pour remplir le DataSet, on déclare un OracleDataAdapter pour lequel
+                // on passe notre OracleCommand qui contient TOUS les paramètres.
+
+                OracleDataAdapter orAdater = new OracleDataAdapter(Oracmd);
+                if (dataSet.Tables.Contains("Question"))
+                {
+                    dataSet.Tables["Question"].Clear();
+                }
+                orAdater.Fill(dataSet, "Question");
+                Oracmd.Dispose();
+                BindingSource bindingSource;
+                bindingSource = new BindingSource(dataSet, "Question");
+                DGV_Question.DataSource = bindingSource;
+                DGV_Question.Columns[2].Visible = false;
+            }
+            catch (Exception se)
+            {
+                MessageBox.Show(se.Message.ToString());
+            }
+        }
+
+        private void BTN_NMotPasse_Click(object sender, EventArgs e)
         {
             ModifierMotDePasse dlgNMP = new ModifierMotDePasse();
             dlgNMP.ShowDialog();
+        }
+
+        private void BTN_Ajouter_Click(object sender, EventArgs e)
+        {
+            AjouterQuestion dlgAjoutQuestion = new AjouterQuestion(connection);
+            dlgAjoutQuestion.ShowDialog();
+            RefreshDGVQuestion();
+        }
+
+        private void BTN_Modifier_Click(object sender, EventArgs e)
+        {
+            RefreshDGVQuestion();
+        }
+
+        private void BTN_Supprimer_Click(object sender, EventArgs e)
+        {
+            RefreshDGVQuestion();
         }
     }
 }
