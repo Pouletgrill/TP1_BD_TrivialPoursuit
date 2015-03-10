@@ -82,6 +82,7 @@
             this.Controls.Add(this.TB_Password);
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.BTN_Annuler);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AdminConnect";
             this.Text = "Gestion";
             this.ResumeLayout(false);

@@ -11,29 +11,34 @@ using Oracle.DataAccess.Client;     //Librairie Oracle
 
 namespace ClassesQuestionnaires
 {
-   public partial class Gestion : Form
-   {
-      OracleConnection connection;
-      public Gestion(OracleConnection connectionx)
-      {
-         connection = connectionx;
-         InitializeComponent();
-      }
+    public partial class Gestion : Form
+    {
+        OracleConnection connection;
+        public Gestion(OracleConnection connectionx)
+        {
+            connection = connectionx;
+            InitializeComponent();
+        }
 
-      private void Gestion_Load(object sender, EventArgs e)
-      {
-         AdminConnect dlgConect = new AdminConnect();
-         dlgConect.ShowDialog();
-         if (dlgConect.DialogResult == System.Windows.Forms.DialogResult.Cancel)
-         {
-            this.Close();
-         }
-      }
+        private void Gestion_Load(object sender, EventArgs e)
+        {
+            ConnexionAdmin();
+        }
 
-      private void button4_Click(object sender, EventArgs e)
-      {
-          ModifierMotDePasse dlgNMP = new ModifierMotDePasse();
-          dlgNMP.ShowDialog();
-      }
-   }
+        public void ConnexionAdmin()
+        {
+            AdminConnect dlgConect = new AdminConnect();
+            dlgConect.ShowDialog();
+            if (dlgConect.DialogResult == System.Windows.Forms.DialogResult.Cancel)
+            {
+                this.Close();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ModifierMotDePasse dlgNMP = new ModifierMotDePasse();
+            dlgNMP.ShowDialog();
+        }
+    }
 }
