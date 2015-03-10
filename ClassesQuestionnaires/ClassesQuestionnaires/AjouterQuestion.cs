@@ -30,7 +30,7 @@ namespace ClassesQuestionnaires
         private void ConstruireListeCategories()
         {
             OracleCommand inserer = new OracleCommand("INSERTION", connection);
-            inserer.CommandText = "PKG_QUESTIONS.LISTER_CATEGORIES";
+            inserer.CommandText = "PKG_GESTION.LISTER_CATEGORIES";
             inserer.CommandType = CommandType.StoredProcedure;
 
             OracleParameter pResultat = new OracleParameter("PRESULTAT", OracleDbType.RefCursor);
@@ -124,8 +124,8 @@ namespace ClassesQuestionnaires
                     MRep3 = TB_Reponse3.Text;
                 }
 
-                OracleCommand oraAjout = new OracleCommand("PKG_QUESTION", connection);
-                oraAjout.CommandText = "PKG_QUESTIONS.INSERTIONQUESTION";
+                OracleCommand oraAjout = new OracleCommand("PKG_GESTION", connection);
+                oraAjout.CommandText = "PKG_GESTION.INSERTIONQUESTION";
                 oraAjout.CommandType = CommandType.StoredProcedure;
 
                 //Déclaration des paramettres
