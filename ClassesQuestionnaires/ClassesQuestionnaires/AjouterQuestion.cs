@@ -13,6 +13,7 @@ namespace ClassesQuestionnaires
 {
     public partial class AjouterQuestion : Form
     {
+        private bool bouttonvalide = false;
         private static String orcluserFR = "riouxfra";
         private static String orcluserXB = "brosseau";
         public String connectionString = "Data Source=(DESCRIPTION="    // ========== TO MOVE =========
@@ -71,8 +72,12 @@ namespace ClassesQuestionnaires
 
         private void UpdateControls()
         {
-            BTN_Ajouter.Enabled = TB_Question.Text != "" && TB_Reponse1.Text != "" && TB_Reponse2.Text != "" && TB_Reponse3.Text != "" && TB_Reponse4.Text != "" &&
-                CMB_Categories.SelectedItem != null;
+            BTN_Ajouter.Enabled = ( TB_Question.Text != "" &&
+                                    TB_Reponse1.Text != "" &&
+                                    TB_Reponse2.Text != "" &&
+                                    TB_Reponse3.Text != "" &&
+                                    TB_Reponse4.Text != "" &&
+                                    CMB_Categories.SelectedItem != null);
         }
 
         private void TB_Question_TextChanged(object sender, EventArgs e)

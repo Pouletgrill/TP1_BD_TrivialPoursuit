@@ -142,11 +142,10 @@ namespace ClassesQuestionnaires
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ModifierQuestionButton_Click(object sender, EventArgs e)
         {
            AjouterQuestion dlg = new AjouterQuestion();
-
-           dlg.Show();
+           dlg.ShowDialog();
         }
     }
 }
