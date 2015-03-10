@@ -1,0 +1,45 @@
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.pdb
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csprojResolveAssemblyReference.cache
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Properties.Resources.resources
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
+C:\Users\Francois\Desktop\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Jeu.resources
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.pdb
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csprojResolveAssemblyReference.cache
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Jeu.resources
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Properties.Resources.resources
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.AjouterQuestion.resources
+C:\Users\200942341\Downloads\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\Oracle.DataAccess.dll
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.pdb
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\Oracle.DataAccess.dll
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csprojResolveAssemblyReference.cache
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.AjouterQuestion.resources
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Jeu.resources
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Properties.Resources.resources
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.pdb
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\Oracle.DataAccess.dll
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csprojResolveAssemblyReference.cache
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.AjouterQuestion.resources
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Jeu.resources
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Properties.Resources.resources
+C:\Users\201354694\Google Drive\Saliha\TP Trivial Poursuit\Classes 2.0 (2)\Classes 2.0\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
+C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
+C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
+C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
