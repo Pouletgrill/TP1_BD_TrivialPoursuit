@@ -13,44 +13,19 @@ namespace ClassesQuestionnaires
 {
     public partial class AjouterQuestion : Form
     {
-        private bool bouttonvalide = false;
-        private static String orcluserFR = "riouxfra";
-        private static String orcluserXB = "brosseau";
-        public String connectionString = "Data Source=(DESCRIPTION="    // ========== TO MOVE =========
-                               + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)"
-                               + "(HOST=205.237.244.251)(PORT=1521)))"
-                               + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)));"
-                               + "User Id=" + orcluserFR + ";Password=ORACLE1";
-
-        public OracleConnection connection;     // ========== TO MOVE =========
-
-        public AjouterQuestion()
+       OracleConnection connection;
+        public AjouterQuestion(OracleConnection connectionx)
         {
+           connection = connectionx;
             InitializeComponent();
         }
 
         private void AjouterQuestion_Load(object sender, EventArgs e)
         {
-            Connecter(); // ========== TO DELETE =========
             ConstruireListeCategories();
             UpdateControls();
         }
 
-        private void Connecter() // ========== TO MOVE =========
-        {
-            connection = new OracleConnection(connectionString);
-            connection.ConnectionString = connectionString;
-
-            try
-            {
-                connection.Open();
-                MessageBox.Show(connection.State.ToString());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur de connection");
-            }
-        }
 
         private void ConstruireListeCategories()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,14 @@ namespace ClassesQuestionnaires
         int Courant;
         Question QuestionPigee;
         List<String> Categories;
+        private static String orclUser = "riouxfra";
+        public String connectionString = "Data Source=(DESCRIPTION="    // ========== TO MOVE =========
+                               + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)"
+                               + "(HOST=205.237.244.251)(PORT=1521)))"
+                               + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)));"
+                               + "User Id=" + orclUser + ";Password=ORACLE1";
+
+        public OracleConnection connection;     // ========== TO MOVE =========
 
         public Jeu(int nbJoueurs)
         {
@@ -35,6 +44,22 @@ namespace ClassesQuestionnaires
                 Joueur joueur = new Joueur("Joueur " + (i + 1).ToString(), i);
                 Joueurs.Add(joueur);
             }
+        }
+
+        private void Connecter() // ========== TO MOVE =========
+        {
+           connection = new OracleConnection(connectionString);
+           connection.ConnectionString = connectionString;
+
+           try
+           {
+              connection.Open();
+              //MessageBox.Show(connection.State.ToString());
+           }
+           catch (Exception ex)
+           {
+              MessageBox.Show("Erreur de connection");
+           }
         }
 
         public void ProchainJoueur()
@@ -115,6 +140,7 @@ namespace ClassesQuestionnaires
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Connecter();
             ProchainJoueur();
         }
 
@@ -144,7 +170,7 @@ namespace ClassesQuestionnaires
 
         private void ModifierQuestionButton_Click(object sender, EventArgs e)
         {
-           AjouterQuestion dlg = new AjouterQuestion();
+           AjouterQuestion dlg = new AjouterQuestion(connection);
            dlg.ShowDialog();
         }
     }
