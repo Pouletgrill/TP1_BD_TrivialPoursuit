@@ -19,5 +19,15 @@ namespace ClassesQuestionnaires
          connection = connectionx;
          InitializeComponent();
       }
+
+      private void Gestion_Load(object sender, EventArgs e)
+      {
+         AdminConnect dlgConect = new AdminConnect();
+         dlgConect.ShowDialog();
+         if (dlgConect.DialogResult == System.Windows.Forms.DialogResult.Cancel)
+         {
+            this.Close();
+         }
+      }
    }
 }

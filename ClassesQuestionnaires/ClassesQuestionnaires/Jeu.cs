@@ -170,7 +170,7 @@ namespace ClassesQuestionnaires
 
         private void ModifierQuestionButton_Click(object sender, EventArgs e)
         {
-           AjouterQuestion dlg = new AjouterQuestion(connection);
+           Gestion dlg = new Gestion(connection);
            dlg.ShowDialog();
         }
     }
