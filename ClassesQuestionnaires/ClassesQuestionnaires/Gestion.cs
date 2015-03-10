@@ -29,5 +29,11 @@ namespace ClassesQuestionnaires
             this.Close();
          }
       }
+
+      private void button4_Click(object sender, EventArgs e)
+      {
+          ModifierMotDePasse dlgNMP = new ModifierMotDePasse();
+          dlgNMP.ShowDialog();
+      }
    }
 }

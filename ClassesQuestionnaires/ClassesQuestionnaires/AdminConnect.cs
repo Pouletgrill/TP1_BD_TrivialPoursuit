@@ -11,28 +11,30 @@ using System.Windows.Forms;
 
 namespace ClassesQuestionnaires
 {
-   public partial class AdminConnect : Form
-   {
+    public partial class AdminConnect : Form
+    {
 
-      public AdminConnect()
-      {
-         InitializeComponent();
-      }
+        public AdminConnect()
+        {
+            InitializeComponent();
+        }
 
-      private void BTN_Ok_Click(object sender, EventArgs e)
-      {
-         if (TB_Password.Text == Properties.Settings.Default.PasswordAdmin)
-         {
-            this.Close();
-         }
-         else
-         {
-            MessageBox.Show("Mot de passe invalide",
-               "Gestion",
-               MessageBoxButtons.OK,
-               MessageBoxIcon.Information,
-               MessageBoxDefaultButton.Button1);
-         }
-      }
-   }
+        private void BTN_Ok_Click(object sender, EventArgs e)
+        {
+            if (TB_Password.Text == Properties.Settings.Default.PasswordAdmin)
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Mot de passe invalide",
+                   "Gestion",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Hand,
+                   MessageBoxDefaultButton.Button1);
+                TB_Password.Text = "";
+            }
+        }
+    }
 }
