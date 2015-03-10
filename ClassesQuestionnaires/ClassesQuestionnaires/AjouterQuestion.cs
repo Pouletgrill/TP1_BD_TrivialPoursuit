@@ -148,10 +148,10 @@ namespace ClassesQuestionnaires
                     MRep2 = TB_Reponse2.Text;
                     MRep3 = TB_Reponse3.Text;
                 }
-
+                MessageBox.Show(CMB_Categories.SelectedItem.ToString()[0].ToString());
                 //GESTIONQUESTION.INSERTIONQUESTION('quel est ton nom ?', 'N', 'Xavier', 'Simon', 'Paul','tarte');
                 OracleCommand oraAjout = new OracleCommand("PKG_QUESTION", connection);
-                oraAjout.CommandText = "PKG_QUESTION.INSERTIONQUESTION";
+                oraAjout.CommandText = "PKG_QUESTIONS.INSERTIONQUESTION";
                 oraAjout.CommandType = CommandType.StoredProcedure;
 
                 //Déclaration des paramettres
@@ -160,15 +160,30 @@ namespace ClassesQuestionnaires
                 procQuestion.Value = TB_Question.Text;
                 oraAjout.Parameters.Add(procQuestion);
 
-                OracleParameter procCategorie = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 50);
+                OracleParameter procCategorie = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 10);
                 procCategorie.Direction = ParameterDirection.Input;
-                procCategorie.Value = CMB_Categories.ValueMember.ToString()[0];//retourne le premier caractère du string
+                procCategorie.Value = CMB_Categories.SelectedItem.ToString()[0].ToString();//retourne le premier caractère du string
                 oraAjout.Parameters.Add(procCategorie);
 
-                OracleParameter procBRep = new OracleParameter("REPONSE_BONNE", OracleDbType.Varchar2, 50);
+                OracleParameter procBRep = new OracleParameter("REPONSE_BONNE", OracleDbType.Varchar2, 250);
                 procBRep.Direction = ParameterDirection.Input;
-                procBRep.Value = 
+                procBRep.Value = BRep;
                 oraAjout.Parameters.Add(procBRep);
+
+                OracleParameter procMRep1 = new OracleParameter("REPONSE_MAUVAISE_1", OracleDbType.Varchar2, 250);
+                procMRep1.Direction = ParameterDirection.Input;
+                procMRep1.Value = MRep1;
+                oraAjout.Parameters.Add(procMRep1);
+
+                OracleParameter procMRep2 = new OracleParameter("REPONSE_MAUVAISE_2", OracleDbType.Varchar2, 250);
+                procMRep2.Direction = ParameterDirection.Input;
+                procMRep2.Value = MRep2;
+                oraAjout.Parameters.Add(procMRep2);
+
+                OracleParameter procMRep3 = new OracleParameter("REPONSE_MAUVAISE_3", OracleDbType.Varchar2, 250);
+                procMRep3.Direction = ParameterDirection.Input;
+                procMRep3.Value = MRep3;
+                oraAjout.Parameters.Add(procMRep3);
 
                 //Execution de la requête
                 oraAjout.ExecuteNonQuery();
