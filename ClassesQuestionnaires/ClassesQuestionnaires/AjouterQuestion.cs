@@ -114,5 +114,35 @@ namespace ClassesQuestionnaires
         {
            this.Close();
         }
+
+        private void BTN_Ajouter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //GESTIONQUESTION.INSERTIONQUESTION('quel est ton nom ?', 'N', 'Xavier', 'Simon', 'Paul','tarte');
+                OracleCommand oraAjout = new OracleCommand("GESTIONQUESTION", connection);
+                oraAjout.CommandText = "GESTIONQUESTION.INSERTIONQUESTION";
+                oraAjout.CommandType = CommandType.StoredProcedure;
+
+                //Déclaration des paramettres
+                OracleParameter procQuestion = new OracleParameter("PQUESTION", OracleDbType.Varchar2,250);
+                procQuestion.Direction = ParameterDirection.Input;
+                procQuestion.Value = TB_Question;
+                oraAjout.Parameters.Add(procQuestion);
+
+                OracleParameter oraPnomEmp = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 50);
+                oraPnomEmp.Direction = ParameterDirection.Input;
+                oraPnomEmp.Value = TB_InsertNomEmp.Text;
+                oraAjout.Parameters.Add(oraPnomEmp);
+
+                //Execution de la requête
+                oraAjout.ExecuteNonQuery();
+                MessageBox.Show("Insertion réusit");
+            }
+            catch (OracleException Oe)
+            {
+                MessageBox.Show(Oe.Message);
+            }
+        }
     }
 }
