@@ -51,3 +51,6 @@ C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnair
 C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Jeu.resources
 C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Properties.Resources.resources
 C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
+C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
+C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
+C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
