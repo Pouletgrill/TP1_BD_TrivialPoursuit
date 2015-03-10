@@ -148,8 +148,7 @@ namespace ClassesQuestionnaires
                     MRep2 = TB_Reponse2.Text;
                     MRep3 = TB_Reponse3.Text;
                 }
-                MessageBox.Show(CMB_Categories.SelectedItem.ToString()[0].ToString());
-                //GESTIONQUESTION.INSERTIONQUESTION('quel est ton nom ?', 'N', 'Xavier', 'Simon', 'Paul','tarte');
+
                 OracleCommand oraAjout = new OracleCommand("PKG_QUESTION", connection);
                 oraAjout.CommandText = "PKG_QUESTIONS.INSERTIONQUESTION";
                 oraAjout.CommandType = CommandType.StoredProcedure;

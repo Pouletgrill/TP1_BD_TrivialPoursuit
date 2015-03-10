@@ -155,7 +155,7 @@
          this.Controls.Add(this.PN_Choix);
          this.Controls.Add(this.TB_Question);
          this.Name = "Jeu";
-         this.Text = "Form1";
+         this.Text = "m";
          this.Load += new System.EventHandler(this.Form1_Load);
          this.PN_Choix.ResumeLayout(false);
          this.PN_Choix.PerformLayout();
