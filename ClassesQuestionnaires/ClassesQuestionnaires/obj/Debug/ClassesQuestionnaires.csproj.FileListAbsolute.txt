@@ -73,3 +73,15 @@ C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnair
 C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
 C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
 C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csprojResolveAssemblyReference.cache
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.AdminConnect.resources
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.AjouterQuestion.resources
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Gestion.resources
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Jeu.resources
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.ModifierMotDePasse.resources
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Properties.Resources.resources
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.SelectCategorie.resources
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.pdb
+C:\Users\200942341\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\Oracle.DataAccess.dll

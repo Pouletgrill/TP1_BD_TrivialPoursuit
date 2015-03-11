@@ -34,8 +34,8 @@ namespace ClassesQuestionnaires
 
             Categories = new List<string>();
             //-- À remplacer par du code de BD
-            Categories.Add("Histoire");
             Categories.Add("Science");
+            Categories.Add("Histoire");
             Categories.Add("Geographie");
             Categories.Add("Cinéma");
 
@@ -44,6 +44,11 @@ namespace ClassesQuestionnaires
                 Joueur joueur = new Joueur("Joueur " + (i + 1).ToString(), i);
                 Joueurs.Add(joueur);
             }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Connecter();
+            ProchainJoueur();
         }
 
         private void Connecter() // ========== TO MOVE =========
@@ -138,11 +143,7 @@ namespace ClassesQuestionnaires
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Connecter();
-            ProchainJoueur();
-        }
+
 
         private void ResetRadioButton()
         {
@@ -172,6 +173,71 @@ namespace ClassesQuestionnaires
         {
            Gestion dlg = new Gestion(connection);
            dlg.ShowDialog();
+        }
+
+        private String AfficherChoixCategorie()
+        {
+            String categorie = null;
+
+            SelectCategorie dlg = new SelectCategorie();
+            dlg.Location = this.Location;
+            System.Threading.Thread.Sleep(50);
+            dlg.ShowDialog();
+
+            categorie = dlg.Categorie;
+
+            return categorie;
+        }
+
+        private void TournerRoulette()
+        {
+            Random rand = new Random();
+            int rnd = rand.Next(Categories.Count * 2) + Categories.Count;
+            int indexCouleur = 0;
+
+            Color[] colors = new Color[5];
+            colors[0] = Properties.Settings.Default.CatColor_AuChoix;
+            colors[1] = Properties.Settings.Default.CatColor_Science;
+            colors[2] = Properties.Settings.Default.CatColor_Histoire;
+            colors[3] = Properties.Settings.Default.CatColor_Geographie;
+            colors[4] = Properties.Settings.Default.CatColor_Cinema;
+
+            for (int i = 0; i < rnd; ++i)
+            {
+                indexCouleur = i % Categories.Count;
+                PN_Roulette.BackColor = colors[indexCouleur];
+                PN_Roulette.Refresh();
+                System.Threading.Thread.Sleep(100 + (i * i));
+            }
+
+            String categorie = null;
+            if (indexCouleur == 0) //Au choix
+            {
+                categorie = AfficherChoixCategorie();
+            }
+            else
+            {
+                categorie = Categories[indexCouleur - 1];
+            }
+
+            LBL_Categorie.Text = categorie;
+        }
+
+        private void PN_Roulette_MouseClick(object sender, MouseEventArgs e)
+        {
+            PN_Roulette.Enabled = false;
+            TournerRoulette();
+            PN_Roulette.Enabled = true;
+        }
+
+        private void PN_Roulette_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void PN_Roulette_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
         }
     }
 }

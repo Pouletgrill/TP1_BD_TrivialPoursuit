@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.GRB_Score = new System.Windows.Forms.GroupBox();
             this.PN_Roulette = new System.Windows.Forms.Panel();
+            this.LBL_Categorie = new System.Windows.Forms.Label();
             this.PN_Choix.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,7 +111,7 @@
             // LBL_Result
             // 
             this.LBL_Result.AutoSize = true;
-            this.LBL_Result.Location = new System.Drawing.Point(54, 9);
+            this.LBL_Result.Location = new System.Drawing.Point(58, 19);
             this.LBL_Result.Name = "LBL_Result";
             this.LBL_Result.Size = new System.Drawing.Size(29, 13);
             this.LBL_Result.TabIndex = 3;
@@ -119,7 +120,7 @@
             // LBL_Joueur
             // 
             this.LBL_Joueur.AutoSize = true;
-            this.LBL_Joueur.Location = new System.Drawing.Point(13, 9);
+            this.LBL_Joueur.Location = new System.Drawing.Point(13, 19);
             this.LBL_Joueur.Name = "LBL_Joueur";
             this.LBL_Joueur.Size = new System.Drawing.Size(39, 13);
             this.LBL_Joueur.TabIndex = 4;
@@ -156,16 +157,30 @@
             // 
             // PN_Roulette
             // 
+            this.PN_Roulette.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PN_Roulette.Location = new System.Drawing.Point(133, 35);
             this.PN_Roulette.Name = "PN_Roulette";
             this.PN_Roulette.Size = new System.Drawing.Size(136, 100);
             this.PN_Roulette.TabIndex = 8;
+            this.PN_Roulette.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PN_Roulette_MouseClick);
+            this.PN_Roulette.MouseEnter += new System.EventHandler(this.PN_Roulette_MouseEnter);
+            this.PN_Roulette.MouseLeave += new System.EventHandler(this.PN_Roulette_MouseLeave);
+            // 
+            // LBL_Categorie
+            // 
+            this.LBL_Categorie.AutoSize = true;
+            this.LBL_Categorie.Location = new System.Drawing.Point(130, 19);
+            this.LBL_Categorie.Name = "LBL_Categorie";
+            this.LBL_Categorie.Size = new System.Drawing.Size(52, 13);
+            this.LBL_Categorie.TabIndex = 9;
+            this.LBL_Categorie.Text = "Catégorie";
             // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 340);
+            this.Controls.Add(this.LBL_Categorie);
             this.Controls.Add(this.PN_Roulette);
             this.Controls.Add(this.GRB_Score);
             this.Controls.Add(this.button1);
@@ -198,6 +213,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox GRB_Score;
         private System.Windows.Forms.Panel PN_Roulette;
+        private System.Windows.Forms.Label LBL_Categorie;
     }
 }
 
