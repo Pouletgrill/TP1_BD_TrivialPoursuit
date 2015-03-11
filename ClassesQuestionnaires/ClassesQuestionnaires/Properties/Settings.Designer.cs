@@ -34,5 +34,65 @@ namespace ClassesQuestionnaires.Properties {
                 this["PasswordAdmin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color CatColor_AuChoix {
+            get {
+                return ((global::System.Drawing.Color)(this["CatColor_AuChoix"]));
+            }
+            set {
+                this["CatColor_AuChoix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkSalmon")]
+        public global::System.Drawing.Color CatColor_Science {
+            get {
+                return ((global::System.Drawing.Color)(this["CatColor_Science"]));
+            }
+            set {
+                this["CatColor_Science"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LawnGreen")]
+        public global::System.Drawing.Color CatColor_Histoire {
+            get {
+                return ((global::System.Drawing.Color)(this["CatColor_Histoire"]));
+            }
+            set {
+                this["CatColor_Histoire"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MediumAquamarine")]
+        public global::System.Drawing.Color CatColor_Geographie {
+            get {
+                return ((global::System.Drawing.Color)(this["CatColor_Geographie"]));
+            }
+            set {
+                this["CatColor_Geographie"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Yellow")]
+        public global::System.Drawing.Color CatColor_Cinema {
+            get {
+                return ((global::System.Drawing.Color)(this["CatColor_Cinema"]));
+            }
+            set {
+                this["CatColor_Cinema"] = value;
+            }
+        }
     }
 }
