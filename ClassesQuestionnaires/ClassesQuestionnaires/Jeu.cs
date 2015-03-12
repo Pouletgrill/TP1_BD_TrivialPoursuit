@@ -16,7 +16,9 @@ namespace ClassesQuestionnaires
         List<Joueur> Joueurs;
         int Courant;
         Question QuestionPigee;
+
         List<String> Categories;
+
         private static String orclUser = "riouxfra";
         public String connectionString = "Data Source=(DESCRIPTION="    // ========== TO MOVE =========
                                + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)"
@@ -67,22 +69,43 @@ namespace ClassesQuestionnaires
            }
         }
 
+        private void ChargerCategories()
+        {
+            OracleCommand inserer = new OracleCommand("INSERTION", connection);
+            inserer.CommandText = "PKG_GESTION.LISTER_CATEGORIES";
+            inserer.CommandType = CommandType.StoredProcedure;
+
+            OracleParameter pResultat = new OracleParameter("PRESULTAT", OracleDbType.RefCursor);
+            pResultat.Direction = ParameterDirection.ReturnValue;
+            inserer.Parameters.Add(pResultat);
+
+            OracleDataReader reader = inserer.ExecuteReader();
+
+            int i = 0;
+            while (reader.Read())
+            {
+                Categories[i] = reader.GetString(0);
+                i++;
+            }
+        }
+
+
         public void ProchainJoueur()
         {
             Courant = (Courant + 1) % Joueurs.Count;
             LBL_Joueur.Text = Joueurs[Courant].Alias;
 
-            PoserQuestion();
+            //PoserQuestion();
         }
 
-        private void PigerQuestion(int categorie)
+        private void PigerQuestion(char categorie)
         {
             List<Reponse> list = new List<Reponse>();
 
             //-- À remplacer par du code de BD
             switch (categorie)
             {
-                case 0:
+                case 'H':
                     list.Add(new Reponse("A", "1840", false));
                     list.Add(new Reponse("B", "1492", true));
                     list.Add(new Reponse("C", "1867", false));
@@ -90,7 +113,7 @@ namespace ClassesQuestionnaires
 
                     QuestionPigee = new Question("Q", "En quelle année Cristophe Colomb a-t'il découvert l'Amérique", "H", list);
                     break;
-                case 1:
+                case 'S':
                     list.Add(new Reponse("A", "P", false));
                     list.Add(new Reponse("B", "T", false));
                     list.Add(new Reponse("C", "K", true));
@@ -98,7 +121,7 @@ namespace ClassesQuestionnaires
 
                     QuestionPigee = new Question("Q", "Symbole chimique du potassium", "S", list);
                     break;
-                case 2:
+                case 'G':
                     list.Add(new Reponse("A", "Berlin", true));
                     list.Add(new Reponse("B", "Hamburg", false));
                     list.Add(new Reponse("C", "Frankfurt", false));
@@ -106,7 +129,7 @@ namespace ClassesQuestionnaires
 
                     QuestionPigee = new Question("Q", "Capitale de l'Allemagne", "G", list);
                     break;
-                case 3:
+                case 'C':
                     list.Add(new Reponse("A", "Jim Carrey", false));
                     list.Add(new Reponse("B", "Tom Cruise", false));
                     list.Add(new Reponse("C", "Brad Pitt", false));
@@ -119,8 +142,7 @@ namespace ClassesQuestionnaires
 
         private void PoserQuestion()
         {
-            Random rnd = new Random();
-            int categorie = rnd.Next(4);
+            char categorie = TournerRoulette()[0];
             PigerQuestion(categorie);
 
             TB_Question.Text = QuestionPigee.Texte + " ?";
@@ -189,7 +211,7 @@ namespace ClassesQuestionnaires
             return categorie;
         }
 
-        private void TournerRoulette()
+        private String TournerRoulette()
         {
             Random rand = new Random();
             int rnd = rand.Next(Categories.Count * 2) + Categories.Count;
@@ -197,8 +219,8 @@ namespace ClassesQuestionnaires
 
             Color[] colors = new Color[5];
             colors[0] = Properties.Settings.Default.CatColor_AuChoix;
-            colors[1] = Properties.Settings.Default.CatColor_Science;
-            colors[2] = Properties.Settings.Default.CatColor_Histoire;
+            colors[1] = Properties.Settings.Default.CatColor_Histoire;
+            colors[2] = Properties.Settings.Default.CatColor_Science;
             colors[3] = Properties.Settings.Default.CatColor_Geographie;
             colors[4] = Properties.Settings.Default.CatColor_Cinema;
 
@@ -221,12 +243,14 @@ namespace ClassesQuestionnaires
             }
 
             LBL_Categorie.Text = categorie;
+
+            return categorie;
         }
 
         private void PN_Roulette_MouseClick(object sender, MouseEventArgs e)
         {
             PN_Roulette.Enabled = false;
-            TournerRoulette();
+            PoserQuestion();//TournerRoulette();
             PN_Roulette.Enabled = true;
         }
 

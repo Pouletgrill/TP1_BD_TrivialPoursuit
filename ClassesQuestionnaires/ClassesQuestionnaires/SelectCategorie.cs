@@ -18,6 +18,13 @@ namespace ClassesQuestionnaires
         {
             InitializeComponent();
         }
+        private void SelectCategorie_Load(object sender, EventArgs e)
+        {
+            PNL_Histoire.BackColor = Properties.Settings.Default.CatColor_Histoire;
+            PNL_Science.BackColor = Properties.Settings.Default.CatColor_Science;
+            PNL_Geographie.BackColor = Properties.Settings.Default.CatColor_Geographie;
+            PNL_Cinema.BackColor = Properties.Settings.Default.CatColor_Cinema;
+        }
 
         private void Panel_MouseDown(object sender, MouseEventArgs e)
         {

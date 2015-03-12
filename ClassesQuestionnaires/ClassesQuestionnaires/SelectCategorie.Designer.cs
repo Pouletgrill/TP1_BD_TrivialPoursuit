@@ -93,6 +93,7 @@
             this.Controls.Add(this.PNL_Science);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SelectCategorie";
+            this.Load += new System.EventHandler(this.SelectCategorie_Load);
             this.Text = "SelectCategorie";
             this.ResumeLayout(false);
 
