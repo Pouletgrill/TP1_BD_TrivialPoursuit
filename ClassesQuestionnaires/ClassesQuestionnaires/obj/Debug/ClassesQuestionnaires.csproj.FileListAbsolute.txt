@@ -100,3 +100,20 @@ C:\Users\200942341\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\C
 C:\Users\200942341\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
 C:\Users\200942341\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
 C:\Users\200942341\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csprojResolveAssemblyReference.cache
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.pdb
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\Oracle.DataAccess.dll
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csprojResolveAssemblyReference.cache
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.AdminConnect.resources
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.AjouterQuestion.resources
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Gestion.resources
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Jeu.resources
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.ModifierMotDePasse.resources
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Properties.Resources.resources
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.SelectCategorie.resources
+\\clg.priv\Ens\El\4\201354694\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
+C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.ModifierMotDePasse.resources
+C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.SelectCategorie.resources

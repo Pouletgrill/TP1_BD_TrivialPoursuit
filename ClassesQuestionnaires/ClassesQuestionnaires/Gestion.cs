@@ -97,5 +97,11 @@ namespace ClassesQuestionnaires
         {
             RefreshDGVQuestion();
         }
+
+        private void DGV_Question_SelectionChanged(object sender, EventArgs e)
+        {
+           //MessageBox.Show(DGV_Question[2,3].Value.ToString());
+           //http://www.codeproject.com/Questions/338684/get-value-from-selected-rows-in-datagridview
+        }
     }
 }
