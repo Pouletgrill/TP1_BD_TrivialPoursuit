@@ -39,7 +39,6 @@ namespace ClassesQuestionnaires
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Hand,
                     MessageBoxDefaultButton.Button1);
-                    TB_NouveauMP.Text = "";
                     TB_NMPValidation.Text = "";
                 }
             }

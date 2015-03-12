@@ -79,7 +79,9 @@ namespace ClassesQuestionnaires
         {
             DialogResult confirme = MessageBox.Show("Voulez-vous Vraiment supprimer la question ?",
             "Confirmation",
-            MessageBoxButtons.YesNo);
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
             if (confirme == DialogResult.Yes)
             {
                 try
