@@ -161,7 +161,7 @@ namespace ClassesQuestionnaires
 
                 //Execution de la requête
                 oraAjout.ExecuteNonQuery();
-                MessageBox.Show("Insertion réusit");
+                //MessageBox.Show("Insertion réusit");
             }
             catch (OracleException Oe)
             {

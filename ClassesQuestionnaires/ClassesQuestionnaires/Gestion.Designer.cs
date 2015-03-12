@@ -58,7 +58,6 @@
          this.DGV_Question.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
          this.DGV_Question.Size = new System.Drawing.Size(388, 251);
          this.DGV_Question.TabIndex = 4;
-         this.DGV_Question.SelectionChanged += new System.EventHandler(this.DGV_Question_SelectionChanged);
          // 
          // BTN_Ajouter
          // 

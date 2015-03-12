@@ -75,6 +75,37 @@ namespace ClassesQuestionnaires
             }
         }
 
+        private void SupprimerParID(String ID)
+        {
+            DialogResult confirme = MessageBox.Show("Voulez-vous Vraiment supprimer la question ?",
+            "Confirmation",
+            MessageBoxButtons.YesNo);
+            if (confirme == DialogResult.Yes)
+            {
+                try
+                {
+                    OracleCommand Oracmd = new OracleCommand("PKG_GESTION",
+                    connection);
+                    Oracmd.CommandText = "PKG_GESTION.SUPPRIMERQUESTION";
+                    Oracmd.CommandType = CommandType.StoredProcedure;
+
+                    //Déclaration des paramettres
+                    OracleParameter oraQuestionID = new OracleParameter("QUESTIONID", OracleDbType.Int32);
+                    oraQuestionID.Direction = ParameterDirection.Input;
+                    oraQuestionID.Value = ID.ToString();
+                    Oracmd.Parameters.Add(oraQuestionID);
+
+                    Oracmd.ExecuteNonQuery();
+                    //MessageBox.Show("suppression réussie!");
+                }
+                catch (Exception se)
+                {
+                    MessageBox.Show(se.Message.ToString());
+                }
+            }
+        }
+
+
         private void BTN_NMotPasse_Click(object sender, EventArgs e)
         {
             ModifierMotDePasse dlgNMP = new ModifierMotDePasse();
@@ -95,13 +126,9 @@ namespace ClassesQuestionnaires
 
         private void BTN_Supprimer_Click(object sender, EventArgs e)
         {
+            //http://www.codeproject.com/Questions/338684/get-value-from-selected-rows-in-datagridview
+            SupprimerParID(DGV_Question.Rows[DGV_Question.CurrentRow.Index].Cells[2].Value.ToString());
             RefreshDGVQuestion();
-        }
-
-        private void DGV_Question_SelectionChanged(object sender, EventArgs e)
-        {
-           //MessageBox.Show(DGV_Question[2,3].Value.ToString());
-           //http://www.codeproject.com/Questions/338684/get-value-from-selected-rows-in-datagridview
         }
     }
 }
