@@ -35,11 +35,6 @@ namespace ClassesQuestionnaires
             Courant = -1; // Au form load, on call ProchainJoueur qui fait +1 donc 0
 
             Categories = new List<string>();
-            //-- À remplacer par du code de BD
-            Categories.Add("Science");
-            Categories.Add("Histoire");
-            Categories.Add("Geographie");
-            Categories.Add("Cinéma");
 
             for (int i = 0; i < nbJoueurs; i++)
             {
@@ -50,6 +45,7 @@ namespace ClassesQuestionnaires
         private void Form1_Load(object sender, EventArgs e)
         {
             Connecter();
+            ChargerCategories();
             ProchainJoueur();
         }
 
@@ -81,11 +77,9 @@ namespace ClassesQuestionnaires
 
             OracleDataReader reader = inserer.ExecuteReader();
 
-            int i = 0;
             while (reader.Read())
             {
-                Categories[i] = reader.GetString(0);
-                i++;
+                Categories.Add(reader.GetString(0));
             }
         }
 
@@ -94,8 +88,7 @@ namespace ClassesQuestionnaires
         {
             Courant = (Courant + 1) % Joueurs.Count;
             LBL_Joueur.Text = Joueurs[Courant].Alias;
-
-            //PoserQuestion();
+            BTN_Action.Enabled = false;
         }
 
         private void PigerQuestion(char categorie)
@@ -151,6 +144,7 @@ namespace ClassesQuestionnaires
             RB_Rep3.Text = QuestionPigee.Reponses[2].Texte;
             RB_Rep4.Text = QuestionPigee.Reponses[3].Texte;
             LBL_Result.Text = "";
+            BTN_Action.Enabled = true;
         }
 
         private void ValiderReponse()
@@ -185,8 +179,8 @@ namespace ClassesQuestionnaires
             else
             {
                 ResetRadioButton();
-                ProchainJoueur();
                 ((Button)sender).Text = "Répondre";
+                ProchainJoueur();
             }
 
         }
@@ -250,7 +244,7 @@ namespace ClassesQuestionnaires
         private void PN_Roulette_MouseClick(object sender, MouseEventArgs e)
         {
             PN_Roulette.Enabled = false;
-            PoserQuestion();//TournerRoulette();
+            PoserQuestion();
             PN_Roulette.Enabled = true;
         }
 
