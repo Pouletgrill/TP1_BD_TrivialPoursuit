@@ -157,6 +157,7 @@ namespace ClassesQuestionnaires
             {
                 LBL_Result.Text = "BAD";
             }
+            PN_Roulette.Enabled = true;
         }
 
 
@@ -245,7 +246,6 @@ namespace ClassesQuestionnaires
         {
             PN_Roulette.Enabled = false;
             PoserQuestion();
-            PN_Roulette.Enabled = true;
         }
 
         private void PN_Roulette_MouseEnter(object sender, EventArgs e)
