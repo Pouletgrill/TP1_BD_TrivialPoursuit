@@ -95,42 +95,32 @@ namespace ClassesQuestionnaires
         {
             List<Reponse> list = new List<Reponse>();
 
-            //-- À remplacer par du code de BD
-            switch (categorie)
+            OracleCommand piger = new OracleCommand("PIGER", connection);
+            piger.CommandText = "PKG_JEU.PIGERQUESTION";
+            piger.CommandType = CommandType.StoredProcedure;
+
+            OracleParameter pReponses = new OracleParameter("PREPONSES", OracleDbType.RefCursor);
+            pReponses.Direction = ParameterDirection.ReturnValue;
+            piger.Parameters.Add(pReponses);
+
+            OracleParameter pCategorie = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 10);
+            pCategorie.Direction = ParameterDirection.Input;
+            pCategorie.Value = categorie.ToString();
+            piger.Parameters.Add(pCategorie);
+
+            OracleParameter pQuestion = new OracleParameter("PQUESTION", OracleDbType.Varchar2, 250);
+            pQuestion.Direction = ParameterDirection.Output;
+            piger.Parameters.Add(pQuestion);
+
+            OracleDataReader reader = piger.ExecuteReader();
+
+            while (reader.Read())
             {
-                case 'H':
-                    list.Add(new Reponse("A", "1840", false));
-                    list.Add(new Reponse("B", "1492", true));
-                    list.Add(new Reponse("C", "1867", false));
-                    list.Add(new Reponse("D", "1931", false));
-
-                    QuestionPigee = new Question("Q", "En quelle année Cristophe Colomb a-t'il découvert l'Amérique", "H", list);
-                    break;
-                case 'S':
-                    list.Add(new Reponse("A", "P", false));
-                    list.Add(new Reponse("B", "T", false));
-                    list.Add(new Reponse("C", "K", true));
-                    list.Add(new Reponse("D", "S", false));
-
-                    QuestionPigee = new Question("Q", "Symbole chimique du potassium", "S", list);
-                    break;
-                case 'G':
-                    list.Add(new Reponse("A", "Berlin", true));
-                    list.Add(new Reponse("B", "Hamburg", false));
-                    list.Add(new Reponse("C", "Frankfurt", false));
-                    list.Add(new Reponse("D", "Stuttgart", false));
-
-                    QuestionPigee = new Question("Q", "Capitale de l'Allemagne", "G", list);
-                    break;
-                case 'C':
-                    list.Add(new Reponse("A", "Jim Carrey", false));
-                    list.Add(new Reponse("B", "Tom Cruise", false));
-                    list.Add(new Reponse("C", "Brad Pitt", false));
-                    list.Add(new Reponse("D", "Nicolas Cage", true));
-
-                    QuestionPigee = new Question("Q", "Meilleur acteur ever", "C", list);
-                    break;
+                bool bonne = (reader.GetString(2) == "1");
+                list.Add(new Reponse(reader.GetString(0), reader.GetString(1), bonne));
             }
+
+            QuestionPigee = new Question("Q", pQuestion.Value.ToString(), categorie.ToString(), list);
         }
 
         private void PoserQuestion()
