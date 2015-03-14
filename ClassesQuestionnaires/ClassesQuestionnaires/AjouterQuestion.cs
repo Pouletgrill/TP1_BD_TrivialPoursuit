@@ -13,11 +13,22 @@ namespace ClassesQuestionnaires
 {
     public partial class AjouterQuestion : Form
     {
+        String fonction;
        OracleConnection connection;
-        public AjouterQuestion(OracleConnection connectionx)
+        public AjouterQuestion(OracleConnection Connection)
         {
-           connection = connectionx;
+           connection = Connection;
             InitializeComponent();
+            fonction = "AJOUT";
+        }
+
+        public AjouterQuestion(OracleConnection Connection,String ID)
+        {
+            connection = Connection;
+            InitializeComponent();
+            fonction = "MODIF";
+            BTN_Ajouter.Text = "Modifier";
+            MessageBox.Show(fonction + " " + ID);
         }
 
         private void AjouterQuestion_Load(object sender, EventArgs e)

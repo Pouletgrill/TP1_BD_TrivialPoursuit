@@ -123,6 +123,9 @@ namespace ClassesQuestionnaires
 
         private void BTN_Modifier_Click(object sender, EventArgs e)
         {
+            AjouterQuestion dlgAjoutQuestion = new AjouterQuestion(connection,
+                DGV_Question.Rows[DGV_Question.CurrentRow.Index].Cells[2].Value.ToString());
+            dlgAjoutQuestion.ShowDialog();
             RefreshDGVQuestion();
         }
 
