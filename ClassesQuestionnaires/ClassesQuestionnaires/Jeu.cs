@@ -88,7 +88,6 @@ namespace ClassesQuestionnaires
         {
             Courant = (Courant + 1) % Joueurs.Count;
             LBL_Joueur.Text = Joueurs[Courant].Alias;
-            BTN_Action.Enabled = false;
         }
 
         private void PigerQuestion(char categorie)
@@ -139,6 +138,8 @@ namespace ClassesQuestionnaires
 
         private void ValiderReponse()
         {
+            BTN_Action.Enabled = false;
+
             if (QuestionPigee.ValiderReponse(Joueurs[Courant].Repondre(PN_Choix)))
             {
                 LBL_Result.Text = "GOOD";
@@ -146,6 +147,7 @@ namespace ClassesQuestionnaires
             else
             {
                 LBL_Result.Text = "BAD";
+                ProchainJoueur();
             }
             PN_Roulette.Enabled = true;
         }
@@ -162,18 +164,7 @@ namespace ClassesQuestionnaires
 
         private void BTN_Action_Click(object sender, EventArgs e)
         {
-            if (((Button)sender).Text == "Répondre")
-            {
-                ValiderReponse();
-                ((Button)sender).Text = "Next";
-            }
-            else
-            {
-                ResetRadioButton();
-                ((Button)sender).Text = "Répondre";
-                ProchainJoueur();
-            }
-
+            ValiderReponse();
         }
 
         private void ModifierQuestionButton_Click(object sender, EventArgs e)
