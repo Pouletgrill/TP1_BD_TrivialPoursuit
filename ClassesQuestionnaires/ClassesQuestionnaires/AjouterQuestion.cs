@@ -206,20 +206,20 @@ namespace ClassesQuestionnaires
             oraAjout.CommandType = CommandType.StoredProcedure;
 
             //Déclaration des paramettres
-            OracleParameter procID = new OracleParameter("QUSTIONID", OracleDbType.Varchar2, 10);
+            OracleParameter procID = new OracleParameter("QUESTIONID", OracleDbType.Varchar2, 10);
             procID.Direction = ParameterDirection.Input;
             procID.Value = ID;
             oraAjout.Parameters.Add(procID);
-
-            OracleParameter procQuestion = new OracleParameter("PQUESTION", OracleDbType.Varchar2, 250);
-            procQuestion.Direction = ParameterDirection.Input;
-            procQuestion.Value = TB_Question.Text;
-            oraAjout.Parameters.Add(procQuestion);
 
             OracleParameter procCategorie = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 10);
             procCategorie.Direction = ParameterDirection.Input;
             procCategorie.Value = CMB_Categories.SelectedItem.ToString()[0].ToString();//retourne le premier caractère du string
             oraAjout.Parameters.Add(procCategorie);
+
+            OracleParameter procQuestion = new OracleParameter("PQUESTION", OracleDbType.Varchar2, 250);
+            procQuestion.Direction = ParameterDirection.Input;
+            procQuestion.Value = TB_Question.Text;
+            oraAjout.Parameters.Add(procQuestion);
 
             OracleParameter procBRep = new OracleParameter("REPONSE_BONNE", OracleDbType.Varchar2, 250);
             procBRep.Direction = ParameterDirection.Input;
