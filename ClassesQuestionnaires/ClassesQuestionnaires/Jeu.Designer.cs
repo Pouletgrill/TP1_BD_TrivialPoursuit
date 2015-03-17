@@ -39,8 +39,6 @@
             this.BTN_Action = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.GRB_Score = new System.Windows.Forms.GroupBox();
-            this.PN_Roulette = new System.Windows.Forms.Panel();
-            this.LBL_Categorie = new System.Windows.Forms.Label();
             this.LBL_Histoire = new System.Windows.Forms.Label();
             this.LBL_ScoreHistoire = new System.Windows.Forms.Label();
             this.LBL_Science = new System.Windows.Forms.Label();
@@ -49,6 +47,8 @@
             this.LBL_ScoreGeographie = new System.Windows.Forms.Label();
             this.LBL_Cinema = new System.Windows.Forms.Label();
             this.LBL_ScoreCinema = new System.Windows.Forms.Label();
+            this.PN_Roulette = new System.Windows.Forms.Panel();
+            this.LBL_Categorie = new System.Windows.Forms.Label();
             this.PN_Choix.SuspendLayout();
             this.GRB_Score.SuspendLayout();
             this.SuspendLayout();
@@ -172,6 +172,78 @@
             this.GRB_Score.TabStop = false;
             this.GRB_Score.Text = "Score";
             // 
+            // LBL_Histoire
+            // 
+            this.LBL_Histoire.AutoSize = true;
+            this.LBL_Histoire.Location = new System.Drawing.Point(7, 20);
+            this.LBL_Histoire.Name = "LBL_Histoire";
+            this.LBL_Histoire.Size = new System.Drawing.Size(42, 13);
+            this.LBL_Histoire.TabIndex = 0;
+            this.LBL_Histoire.Text = "Histoire";
+            // 
+            // LBL_ScoreHistoire
+            // 
+            this.LBL_ScoreHistoire.AutoSize = true;
+            this.LBL_ScoreHistoire.Location = new System.Drawing.Point(82, 20);
+            this.LBL_ScoreHistoire.Name = "LBL_ScoreHistoire";
+            this.LBL_ScoreHistoire.Size = new System.Drawing.Size(26, 13);
+            this.LBL_ScoreHistoire.TabIndex = 1;
+            this.LBL_ScoreHistoire.Text = "X/X";
+            // 
+            // LBL_Science
+            // 
+            this.LBL_Science.AutoSize = true;
+            this.LBL_Science.Location = new System.Drawing.Point(7, 33);
+            this.LBL_Science.Name = "LBL_Science";
+            this.LBL_Science.Size = new System.Drawing.Size(46, 13);
+            this.LBL_Science.TabIndex = 2;
+            this.LBL_Science.Text = "Science";
+            // 
+            // LBL_ScoreScience
+            // 
+            this.LBL_ScoreScience.AutoSize = true;
+            this.LBL_ScoreScience.Location = new System.Drawing.Point(82, 33);
+            this.LBL_ScoreScience.Name = "LBL_ScoreScience";
+            this.LBL_ScoreScience.Size = new System.Drawing.Size(26, 13);
+            this.LBL_ScoreScience.TabIndex = 3;
+            this.LBL_ScoreScience.Text = "X/X";
+            // 
+            // LBL_Geographie
+            // 
+            this.LBL_Geographie.AutoSize = true;
+            this.LBL_Geographie.Location = new System.Drawing.Point(7, 46);
+            this.LBL_Geographie.Name = "LBL_Geographie";
+            this.LBL_Geographie.Size = new System.Drawing.Size(62, 13);
+            this.LBL_Geographie.TabIndex = 4;
+            this.LBL_Geographie.Text = "Geographie";
+            // 
+            // LBL_ScoreGeographie
+            // 
+            this.LBL_ScoreGeographie.AutoSize = true;
+            this.LBL_ScoreGeographie.Location = new System.Drawing.Point(82, 46);
+            this.LBL_ScoreGeographie.Name = "LBL_ScoreGeographie";
+            this.LBL_ScoreGeographie.Size = new System.Drawing.Size(26, 13);
+            this.LBL_ScoreGeographie.TabIndex = 5;
+            this.LBL_ScoreGeographie.Text = "X/X";
+            // 
+            // LBL_Cinema
+            // 
+            this.LBL_Cinema.AutoSize = true;
+            this.LBL_Cinema.Location = new System.Drawing.Point(7, 59);
+            this.LBL_Cinema.Name = "LBL_Cinema";
+            this.LBL_Cinema.Size = new System.Drawing.Size(42, 13);
+            this.LBL_Cinema.TabIndex = 6;
+            this.LBL_Cinema.Text = "Cinema";
+            // 
+            // LBL_ScoreCinema
+            // 
+            this.LBL_ScoreCinema.AutoSize = true;
+            this.LBL_ScoreCinema.Location = new System.Drawing.Point(82, 59);
+            this.LBL_ScoreCinema.Name = "LBL_ScoreCinema";
+            this.LBL_ScoreCinema.Size = new System.Drawing.Size(26, 13);
+            this.LBL_ScoreCinema.TabIndex = 7;
+            this.LBL_ScoreCinema.Text = "X/X";
+            // 
             // PN_Roulette
             // 
             this.PN_Roulette.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -191,78 +263,6 @@
             this.LBL_Categorie.Size = new System.Drawing.Size(52, 13);
             this.LBL_Categorie.TabIndex = 9;
             this.LBL_Categorie.Text = "Catégorie";
-            // 
-            // LBL_Histoire
-            // 
-            this.LBL_Histoire.AutoSize = true;
-            this.LBL_Histoire.Location = new System.Drawing.Point(7, 20);
-            this.LBL_Histoire.Name = "LBL_Histoire";
-            this.LBL_Histoire.Size = new System.Drawing.Size(35, 13);
-            this.LBL_Histoire.TabIndex = 0;
-            this.LBL_Histoire.Text = "label1";
-            // 
-            // LBL_ScoreHistoire
-            // 
-            this.LBL_ScoreHistoire.AutoSize = true;
-            this.LBL_ScoreHistoire.Location = new System.Drawing.Point(82, 20);
-            this.LBL_ScoreHistoire.Name = "LBL_ScoreHistoire";
-            this.LBL_ScoreHistoire.Size = new System.Drawing.Size(26, 13);
-            this.LBL_ScoreHistoire.TabIndex = 1;
-            this.LBL_ScoreHistoire.Text = "X/X";
-            // 
-            // LBL_Science
-            // 
-            this.LBL_Science.AutoSize = true;
-            this.LBL_Science.Location = new System.Drawing.Point(7, 33);
-            this.LBL_Science.Name = "LBL_Science";
-            this.LBL_Science.Size = new System.Drawing.Size(35, 13);
-            this.LBL_Science.TabIndex = 2;
-            this.LBL_Science.Text = "label1";
-            // 
-            // LBL_ScoreScience
-            // 
-            this.LBL_ScoreScience.AutoSize = true;
-            this.LBL_ScoreScience.Location = new System.Drawing.Point(82, 33);
-            this.LBL_ScoreScience.Name = "LBL_ScoreScience";
-            this.LBL_ScoreScience.Size = new System.Drawing.Size(26, 13);
-            this.LBL_ScoreScience.TabIndex = 3;
-            this.LBL_ScoreScience.Text = "X/X";
-            // 
-            // LBL_Geographie
-            // 
-            this.LBL_Geographie.AutoSize = true;
-            this.LBL_Geographie.Location = new System.Drawing.Point(7, 46);
-            this.LBL_Geographie.Name = "LBL_Geographie";
-            this.LBL_Geographie.Size = new System.Drawing.Size(35, 13);
-            this.LBL_Geographie.TabIndex = 4;
-            this.LBL_Geographie.Text = "label1";
-            // 
-            // LBL_ScoreGeographie
-            // 
-            this.LBL_ScoreGeographie.AutoSize = true;
-            this.LBL_ScoreGeographie.Location = new System.Drawing.Point(82, 46);
-            this.LBL_ScoreGeographie.Name = "LBL_ScoreGeographie";
-            this.LBL_ScoreGeographie.Size = new System.Drawing.Size(26, 13);
-            this.LBL_ScoreGeographie.TabIndex = 5;
-            this.LBL_ScoreGeographie.Text = "X/X";
-            // 
-            // LBL_Cinema
-            // 
-            this.LBL_Cinema.AutoSize = true;
-            this.LBL_Cinema.Location = new System.Drawing.Point(7, 59);
-            this.LBL_Cinema.Name = "LBL_Cinema";
-            this.LBL_Cinema.Size = new System.Drawing.Size(35, 13);
-            this.LBL_Cinema.TabIndex = 6;
-            this.LBL_Cinema.Text = "label1";
-            // 
-            // LBL_ScoreCinema
-            // 
-            this.LBL_ScoreCinema.AutoSize = true;
-            this.LBL_ScoreCinema.Location = new System.Drawing.Point(82, 59);
-            this.LBL_ScoreCinema.Name = "LBL_ScoreCinema";
-            this.LBL_ScoreCinema.Size = new System.Drawing.Size(26, 13);
-            this.LBL_ScoreCinema.TabIndex = 7;
-            this.LBL_ScoreCinema.Text = "X/X";
             // 
             // Jeu
             // 

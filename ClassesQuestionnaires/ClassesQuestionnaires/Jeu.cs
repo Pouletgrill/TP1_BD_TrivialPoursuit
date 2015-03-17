@@ -39,6 +39,7 @@ namespace ClassesQuestionnaires
         private void Form1_Load(object sender, EventArgs e)
         {
             Connecter();
+            ResetScores();
             ChargerJoueur("Walase", 0);
             ChargerJoueur("GroMite", 1);
             ChargerCategories();
@@ -110,10 +111,26 @@ namespace ClassesQuestionnaires
 
         }
 
+        private void ResetScores()
+        {
+            try
+            {
+                OracleCommand reset = new OracleCommand("RESET", connection);
+                reset.CommandType = CommandType.StoredProcedure;
+                reset.CommandText = "PKG_JEU.RESETSCORES";
+                reset.ExecuteNonQuery();
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message);
+            }
+        }
+
         public void ProchainJoueur()
         {
             Courant = (Courant + 1) % Joueurs.Count;
             LBL_Joueur.Text = Joueurs[Courant].Alias;
+            AfficherScore();
         }
 
         private void PigerQuestion(char categorie)
@@ -204,6 +221,7 @@ namespace ClassesQuestionnaires
                 score.Parameters.Add(pCategorie);
 
                 score.ExecuteNonQuery();
+                AfficherScore();
             }
             catch (OracleException oe)
             {
@@ -251,7 +269,7 @@ namespace ClassesQuestionnaires
                 LBL_ScoreHistoire.Text = pHistoire.Value.ToString() + "/5";
                 LBL_ScoreScience.Text = pScience.Value.ToString() + "/5";
                 LBL_ScoreGeographie.Text = pGeographie.Value.ToString() + "/5";
-                LBL_Cinema.Text = pCinema.Value.ToString() + "/5";
+                LBL_ScoreCinema.Text = pCinema.Value.ToString() + "/5";
             }
             catch (OracleException oe)
             {
