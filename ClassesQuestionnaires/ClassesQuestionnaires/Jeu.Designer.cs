@@ -157,14 +157,14 @@
             // 
             // GRB_Score
             // 
-            this.GRB_Score.Controls.Add(this.LBL_ScoreCinema);
-            this.GRB_Score.Controls.Add(this.LBL_Cinema);
-            this.GRB_Score.Controls.Add(this.LBL_ScoreGeographie);
-            this.GRB_Score.Controls.Add(this.LBL_Geographie);
-            this.GRB_Score.Controls.Add(this.LBL_ScoreScience);
-            this.GRB_Score.Controls.Add(this.LBL_Science);
-            this.GRB_Score.Controls.Add(this.LBL_ScoreHistoire);
             this.GRB_Score.Controls.Add(this.LBL_Histoire);
+            this.GRB_Score.Controls.Add(this.LBL_ScoreHistoire);
+            this.GRB_Score.Controls.Add(this.LBL_Science);
+            this.GRB_Score.Controls.Add(this.LBL_ScoreScience);
+            this.GRB_Score.Controls.Add(this.LBL_Geographie);
+            this.GRB_Score.Controls.Add(this.LBL_ScoreGeographie);
+            this.GRB_Score.Controls.Add(this.LBL_Cinema);
+            this.GRB_Score.Controls.Add(this.LBL_ScoreCinema);
             this.GRB_Score.Location = new System.Drawing.Point(13, 35);
             this.GRB_Score.Name = "GRB_Score";
             this.GRB_Score.Size = new System.Drawing.Size(114, 98);

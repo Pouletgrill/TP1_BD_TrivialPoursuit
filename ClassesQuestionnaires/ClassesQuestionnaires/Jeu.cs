@@ -35,34 +35,30 @@ namespace ClassesQuestionnaires
             Courant = -1; // Au form load, on call ProchainJoueur qui fait +1 donc 0
 
             Categories = new List<string>();
-
-            for (int i = 0; i < nbJoueurs; i++)
-            {
-                Joueur joueur = new Joueur("Joueur " + (i + 1).ToString(), i);
-                Joueurs.Add(joueur);
-            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             Connecter();
+            ChargerJoueur("Walase", 0);
+            ChargerJoueur("GroMite", 1);
             ChargerCategories();
             ProchainJoueur();
         }
 
         private void Connecter() // ========== TO MOVE =========
         {
-           connection = new OracleConnection(connectionString);
-           connection.ConnectionString = connectionString;
+            connection = new OracleConnection(connectionString);
+            connection.ConnectionString = connectionString;
 
-           try
-           {
-              connection.Open();
-              //MessageBox.Show(connection.State.ToString());
-           }
-           catch (Exception ex)
-           {
-              MessageBox.Show("Erreur de connection");
-           }
+            try
+            {
+                connection.Open();
+                //MessageBox.Show(connection.State.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur de connection");
+            }
         }
 
         private void ChargerCategories()
@@ -90,6 +86,29 @@ namespace ClassesQuestionnaires
             }
         }
 
+        private void ChargerJoueur(String Joueur, int ordre)
+        {
+            try
+            {
+                OracleCommand charger = new OracleCommand("CHARGER", connection);
+                charger.CommandType = CommandType.StoredProcedure;
+                charger.CommandText = "PKG_JEU.CHARGERJOUEUR";
+
+                OracleParameter pJoueur = new OracleParameter("PJOUEUR", OracleDbType.Varchar2, 30);
+                pJoueur.Direction = ParameterDirection.Input;
+                pJoueur.Value = Joueur;
+                charger.Parameters.Add(pJoueur);
+
+                charger.ExecuteNonQuery();
+
+                Joueurs.Add(new Joueur(Joueur, ordre));
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message);
+            }
+
+        }
 
         public void ProchainJoueur()
         {
@@ -156,17 +175,89 @@ namespace ClassesQuestionnaires
 
             if (QuestionPigee.ValiderReponse(Joueurs[Courant].Repondre(PN_Choix)))
             {
-                LBL_Result.Text = "GOOD";
+                BonneReponse();
             }
             else
             {
-                LBL_Result.Text = "BAD";
-                ProchainJoueur();
+                MauvaiseReponse();
             }
             PN_Roulette.Enabled = true;
         }
 
+        private void BonneReponse()
+        {
+            try
+            {
+                LBL_Result.Text = "GOOD";
+                OracleCommand score = new OracleCommand("SCORE", connection);
+                score.CommandType = CommandType.StoredProcedure;
+                score.CommandText = "PKG_JEU.BONNEREPONSE";
 
+                OracleParameter pJoueur = new OracleParameter("PJOUEUR", OracleDbType.Varchar2, 30);
+                pJoueur.Direction = ParameterDirection.Input;
+                pJoueur.Value = Joueurs[Courant].Alias;
+                score.Parameters.Add(pJoueur);
+
+                OracleParameter pCategorie = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 10);
+                pCategorie.Direction = ParameterDirection.Input;
+                pCategorie.Value = QuestionPigee.Categorie;
+                score.Parameters.Add(pCategorie);
+
+                score.ExecuteNonQuery();
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message);
+            }
+        }
+
+        private void MauvaiseReponse()
+        {
+            LBL_Result.Text = "BAD";
+            ProchainJoueur();
+        }
+
+        private void AfficherScore()
+        {
+            try
+            {
+                OracleCommand afficher = new OracleCommand("AFFICHER", connection);
+                afficher.CommandType = CommandType.StoredProcedure;
+                afficher.CommandText = "PKG_JEU.AFFICHERSCORE";
+
+                OracleParameter pJoueur = new OracleParameter("PJOUEUR", OracleDbType.Varchar2, 30);
+                pJoueur.Direction = ParameterDirection.Input;
+                pJoueur.Value = Joueurs[Courant].Alias;
+                afficher.Parameters.Add(pJoueur);
+
+                OracleParameter pHistoire = new OracleParameter("PHISTOIRE", OracleDbType.Int32);
+                pHistoire.Direction = ParameterDirection.Output;
+                afficher.Parameters.Add(pHistoire);
+
+                OracleParameter pScience = new OracleParameter("PSCIENCE", OracleDbType.Int32);
+                pScience.Direction = ParameterDirection.Output;
+                afficher.Parameters.Add(pScience);
+
+                OracleParameter pGeographie = new OracleParameter("PGEOGRAPHIE", OracleDbType.Int32);
+                pGeographie.Direction = ParameterDirection.Output;
+                afficher.Parameters.Add(pGeographie);
+
+                OracleParameter pCinema = new OracleParameter("PCINEMA", OracleDbType.Int32);
+                pCinema.Direction = ParameterDirection.Output;
+                afficher.Parameters.Add(pCinema);
+
+                afficher.ExecuteNonQuery();
+
+                LBL_ScoreHistoire.Text = pHistoire.Value.ToString() + "/5";
+                LBL_ScoreScience.Text = pScience.Value.ToString() + "/5";
+                LBL_ScoreGeographie.Text = pGeographie.Value.ToString() + "/5";
+                LBL_Cinema.Text = pCinema.Value.ToString() + "/5";
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message);
+            }
+        }
 
         private void ResetRadioButton()
         {
@@ -183,8 +274,8 @@ namespace ClassesQuestionnaires
 
         private void ModifierQuestionButton_Click(object sender, EventArgs e)
         {
-           Gestion dlg = new Gestion(connection);
-           dlg.ShowDialog();
+            Gestion dlg = new Gestion(connection);
+            dlg.ShowDialog();
         }
 
         private String AfficherChoixCategorie()
