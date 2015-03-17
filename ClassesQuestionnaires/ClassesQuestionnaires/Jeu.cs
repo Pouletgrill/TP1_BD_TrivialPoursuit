@@ -67,19 +67,26 @@ namespace ClassesQuestionnaires
 
         private void ChargerCategories()
         {
-            OracleCommand inserer = new OracleCommand("INSERTION", connection);
-            inserer.CommandText = "PKG_GESTION.LISTER_CATEGORIES";
-            inserer.CommandType = CommandType.StoredProcedure;
-
-            OracleParameter pResultat = new OracleParameter("PRESULTAT", OracleDbType.RefCursor);
-            pResultat.Direction = ParameterDirection.ReturnValue;
-            inserer.Parameters.Add(pResultat);
-
-            OracleDataReader reader = inserer.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                Categories.Add(reader.GetString(0));
+                OracleCommand inserer = new OracleCommand("INSERTION", connection);
+                inserer.CommandText = "PKG_GESTION.LISTER_CATEGORIES";
+                inserer.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter pResultat = new OracleParameter("PRESULTAT", OracleDbType.RefCursor);
+                pResultat.Direction = ParameterDirection.ReturnValue;
+                inserer.Parameters.Add(pResultat);
+
+                OracleDataReader reader = inserer.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Categories.Add(reader.GetString(0));
+                }
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message);
             }
         }
 
@@ -92,34 +99,41 @@ namespace ClassesQuestionnaires
 
         private void PigerQuestion(char categorie)
         {
-            List<Reponse> list = new List<Reponse>();
-
-            OracleCommand piger = new OracleCommand("PIGER", connection);
-            piger.CommandText = "PKG_JEU.PIGERQUESTION";
-            piger.CommandType = CommandType.StoredProcedure;
-
-            OracleParameter pReponses = new OracleParameter("PREPONSES", OracleDbType.RefCursor);
-            pReponses.Direction = ParameterDirection.ReturnValue;
-            piger.Parameters.Add(pReponses);
-
-            OracleParameter pCategorie = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 10);
-            pCategorie.Direction = ParameterDirection.Input;
-            pCategorie.Value = categorie.ToString();
-            piger.Parameters.Add(pCategorie);
-
-            OracleParameter pQuestion = new OracleParameter("PQUESTION", OracleDbType.Varchar2, 250);
-            pQuestion.Direction = ParameterDirection.Output;
-            piger.Parameters.Add(pQuestion);
-
-            OracleDataReader reader = piger.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                bool bonne = (reader.GetString(2) == "1");
-                list.Add(new Reponse(reader.GetString(0), reader.GetString(1), bonne));
-            }
+                List<Reponse> list = new List<Reponse>();
 
-            QuestionPigee = new Question("Q", pQuestion.Value.ToString(), categorie.ToString(), list);
+                OracleCommand piger = new OracleCommand("PIGER", connection);
+                piger.CommandText = "PKG_JEU.PIGERQUESTION";
+                piger.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter pReponses = new OracleParameter("PREPONSES", OracleDbType.RefCursor);
+                pReponses.Direction = ParameterDirection.ReturnValue;
+                piger.Parameters.Add(pReponses);
+
+                OracleParameter pCategorie = new OracleParameter("PCATEGORIE", OracleDbType.Varchar2, 10);
+                pCategorie.Direction = ParameterDirection.Input;
+                pCategorie.Value = categorie.ToString();
+                piger.Parameters.Add(pCategorie);
+
+                OracleParameter pQuestion = new OracleParameter("PQUESTION", OracleDbType.Varchar2, 250);
+                pQuestion.Direction = ParameterDirection.Output;
+                piger.Parameters.Add(pQuestion);
+
+                OracleDataReader reader = piger.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    bool bonne = (reader.GetString(2) == "1");
+                    list.Add(new Reponse(reader.GetString(0), reader.GetString(1), bonne));
+                }
+
+                QuestionPigee = new Question("Q", pQuestion.Value.ToString(), categorie.ToString(), list);
+            }
+            catch (OracleException oe)
+            {
+                MessageBox.Show(oe.Message);
+            }
         }
 
         private void PoserQuestion()
