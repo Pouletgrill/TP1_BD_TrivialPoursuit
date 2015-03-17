@@ -164,6 +164,13 @@ namespace ClassesQuestionnaires
                     list.Add(new Reponse(reader.GetString(0), reader.GetString(1), bonne));
                 }
 
+                Random rnd = new Random();
+                int index = rnd.Next(0, list.Count);
+
+                Reponse temp = list[index];
+                list[index] = list[0];
+                list[0] = temp;
+
                 QuestionPigee = new Question("Q", pQuestion.Value.ToString(), categorie.ToString(), list);
             }
             catch (OracleException oe)
@@ -179,20 +186,10 @@ namespace ClassesQuestionnaires
 
             TB_Question.Text = QuestionPigee.Texte + " ?";
 
-            Random rnd = new Random();
-	        int index = rnd.Next(0,QuestionPigee.Reponses.Count); // Vérifie j'suis pas sur
-
-            for (int i = 1; i <= QuestionPigee.Reponses.Count; i++)
-            {
-                RadioButton rb = (RadioButton)this.Controls.Find("RB_Rep" + i.ToString(), true)[0];
-                rb.Text = QuestionPigee.Reponses[index % QuestionPigee.Reponses.Count].Texte;
-                index++;
-            }
-
-            //RB_Rep1.Text = QuestionPigee.Reponses[0].Texte;
-            //RB_Rep2.Text = QuestionPigee.Reponses[1].Texte;
-            //RB_Rep3.Text = QuestionPigee.Reponses[2].Texte;
-            //RB_Rep4.Text = QuestionPigee.Reponses[3].Texte;
+            RB_Rep1.Text = QuestionPigee.Reponses[0].Texte;
+            RB_Rep2.Text = QuestionPigee.Reponses[1].Texte;
+            RB_Rep3.Text = QuestionPigee.Reponses[2].Texte;
+            RB_Rep4.Text = QuestionPigee.Reponses[3].Texte;
             LBL_Result.Text = "";
             BTN_Action.Enabled = true;
         }
