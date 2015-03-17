@@ -15,6 +15,7 @@ namespace ClassesQuestionnaires
    {
       String fonction;
       OracleConnection connection;
+      String ID;
       public AjouterQuestion(OracleConnection Connection)
       {
          connection = Connection;
@@ -22,19 +23,29 @@ namespace ClassesQuestionnaires
          fonction = "AJOUT";
       }
 
-      public AjouterQuestion(OracleConnection Connection, String ID)
+      public AjouterQuestion(OracleConnection Connection, String Id)
       {
          connection = Connection;
          InitializeComponent();
          fonction = "MODIF";
          BTN_Ajouter.Text = "Modifier";
-         MessageBox.Show(fonction + " " + ID);
+         ID = Id;
       }
 
       private void AjouterQuestion_Load(object sender, EventArgs e)
       {
          ConstruireListeCategories();
          UpdateControls();
+         if (fonction == "MODIF")
+         {
+            AfficherQuestion(ID);
+            AfficherCategorie(ID);
+            AfficherReponses(ID);
+         }
+         else
+         {
+
+         }
       }
 
 
@@ -103,7 +114,7 @@ namespace ClassesQuestionnaires
 
       private void BTN_Ajouter_Modifier_Click(object sender, EventArgs e)
       {
-         if (fonction=="AJOUT")
+         if (fonction == "AJOUT")
             Ajouter();
          else
             Modifier();
@@ -190,6 +201,83 @@ namespace ClassesQuestionnaires
       private void Modifier()
       {
          MessageBox.Show("cccc");
+      }
+
+      private void AfficherCategorie(String ID)
+      {
+         try
+         {
+            // //déclaration de OracleCommand pour appeler la fonction avec la
+            //connection conn.
+            OracleCommand OraCmdCategorie = new OracleCommand("PKG_GESTION", connection);
+            OraCmdCategorie.CommandText = "PKG_GESTION.GETCATEGORIEBYID";
+            OraCmdCategorie.CommandType = CommandType.StoredProcedure;
+
+            // déclaration du paramètre en OUT
+            OracleParameter OraResultat = new
+            OracleParameter("RESULTAT", OracleDbType.Varchar2, 30);
+            OraResultat.Direction = ParameterDirection.ReturnValue;
+            OraCmdCategorie.Parameters.Add(OraResultat);
+
+            OracleParameter OraDesc = new
+            OracleParameter("QUESTIONID", OracleDbType.Varchar2, 10);
+            OraDesc.Value = ID;
+            OraDesc.Direction = ParameterDirection.Input;
+            OraCmdCategorie.Parameters.Add(OraDesc);
+
+            //comme on retourne un INT, on peut utiliser la méthode ExecuteScalar
+            //de l'objet OracleCommande
+            OraCmdCategorie.ExecuteScalar();
+            String Categorie = OraResultat.Value.ToString();
+            int i = 0;
+            foreach (String categorie in CMB_Categories.Items)
+            {
+               if (categorie == Categorie)
+                  CMB_Categories.SelectedIndex = i;
+               else
+                  i++;
+            }
+         }
+         catch (Exception se)
+         {
+            MessageBox.Show(se.Message.ToString());
+         }
+      }
+      private void AfficherQuestion(String ID)
+      {
+         try
+         {
+            // //déclaration de OracleCommand pour appeler la fonction avec la
+            //connection conn.
+            OracleCommand OraCmdCategorie = new OracleCommand("PKG_GESTION", connection);
+            OraCmdCategorie.CommandText = "PKG_GESTION.GETQUESTIONBYID";
+            OraCmdCategorie.CommandType = CommandType.StoredProcedure;
+
+            // déclaration du paramètre en OUT
+            OracleParameter OraResultat = new
+            OracleParameter("RESULTAT", OracleDbType.Varchar2, 250);
+            OraResultat.Direction = ParameterDirection.ReturnValue;
+            OraCmdCategorie.Parameters.Add(OraResultat);
+
+            OracleParameter OraDesc = new
+            OracleParameter("QUESTIONID", OracleDbType.Varchar2, 10);
+            OraDesc.Value = ID;
+            OraDesc.Direction = ParameterDirection.Input;
+            OraCmdCategorie.Parameters.Add(OraDesc);
+
+            //comme on retourne un INT, on peut utiliser la méthode ExecuteScalar
+            //de l'objet OracleCommande
+            OraCmdCategorie.ExecuteScalar();
+            TB_Question.Text = OraResultat.Value.ToString();
+         }
+         catch (Exception se)
+         {
+            MessageBox.Show(se.Message.ToString());
+         }
+      }
+      private void AfficherReponses(String ID)
+      {
+
       }
    }
 }
