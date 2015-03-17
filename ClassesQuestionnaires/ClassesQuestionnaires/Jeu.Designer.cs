@@ -41,7 +41,16 @@
             this.GRB_Score = new System.Windows.Forms.GroupBox();
             this.PN_Roulette = new System.Windows.Forms.Panel();
             this.LBL_Categorie = new System.Windows.Forms.Label();
+            this.LBL_Histoire = new System.Windows.Forms.Label();
+            this.LBL_ScoreHistoire = new System.Windows.Forms.Label();
+            this.LBL_Science = new System.Windows.Forms.Label();
+            this.LBL_ScoreScience = new System.Windows.Forms.Label();
+            this.LBL_Geographie = new System.Windows.Forms.Label();
+            this.LBL_ScoreGeographie = new System.Windows.Forms.Label();
+            this.LBL_Cinema = new System.Windows.Forms.Label();
+            this.LBL_ScoreCinema = new System.Windows.Forms.Label();
             this.PN_Choix.SuspendLayout();
+            this.GRB_Score.SuspendLayout();
             this.SuspendLayout();
             // 
             // TB_Question
@@ -148,6 +157,14 @@
             // 
             // GRB_Score
             // 
+            this.GRB_Score.Controls.Add(this.LBL_ScoreCinema);
+            this.GRB_Score.Controls.Add(this.LBL_Cinema);
+            this.GRB_Score.Controls.Add(this.LBL_ScoreGeographie);
+            this.GRB_Score.Controls.Add(this.LBL_Geographie);
+            this.GRB_Score.Controls.Add(this.LBL_ScoreScience);
+            this.GRB_Score.Controls.Add(this.LBL_Science);
+            this.GRB_Score.Controls.Add(this.LBL_ScoreHistoire);
+            this.GRB_Score.Controls.Add(this.LBL_Histoire);
             this.GRB_Score.Location = new System.Drawing.Point(13, 35);
             this.GRB_Score.Name = "GRB_Score";
             this.GRB_Score.Size = new System.Drawing.Size(114, 98);
@@ -175,6 +192,78 @@
             this.LBL_Categorie.TabIndex = 9;
             this.LBL_Categorie.Text = "Catégorie";
             // 
+            // LBL_Histoire
+            // 
+            this.LBL_Histoire.AutoSize = true;
+            this.LBL_Histoire.Location = new System.Drawing.Point(7, 20);
+            this.LBL_Histoire.Name = "LBL_Histoire";
+            this.LBL_Histoire.Size = new System.Drawing.Size(35, 13);
+            this.LBL_Histoire.TabIndex = 0;
+            this.LBL_Histoire.Text = "label1";
+            // 
+            // LBL_ScoreHistoire
+            // 
+            this.LBL_ScoreHistoire.AutoSize = true;
+            this.LBL_ScoreHistoire.Location = new System.Drawing.Point(82, 20);
+            this.LBL_ScoreHistoire.Name = "LBL_ScoreHistoire";
+            this.LBL_ScoreHistoire.Size = new System.Drawing.Size(26, 13);
+            this.LBL_ScoreHistoire.TabIndex = 1;
+            this.LBL_ScoreHistoire.Text = "X/X";
+            // 
+            // LBL_Science
+            // 
+            this.LBL_Science.AutoSize = true;
+            this.LBL_Science.Location = new System.Drawing.Point(7, 33);
+            this.LBL_Science.Name = "LBL_Science";
+            this.LBL_Science.Size = new System.Drawing.Size(35, 13);
+            this.LBL_Science.TabIndex = 2;
+            this.LBL_Science.Text = "label1";
+            // 
+            // LBL_ScoreScience
+            // 
+            this.LBL_ScoreScience.AutoSize = true;
+            this.LBL_ScoreScience.Location = new System.Drawing.Point(82, 33);
+            this.LBL_ScoreScience.Name = "LBL_ScoreScience";
+            this.LBL_ScoreScience.Size = new System.Drawing.Size(26, 13);
+            this.LBL_ScoreScience.TabIndex = 3;
+            this.LBL_ScoreScience.Text = "X/X";
+            // 
+            // LBL_Geographie
+            // 
+            this.LBL_Geographie.AutoSize = true;
+            this.LBL_Geographie.Location = new System.Drawing.Point(7, 46);
+            this.LBL_Geographie.Name = "LBL_Geographie";
+            this.LBL_Geographie.Size = new System.Drawing.Size(35, 13);
+            this.LBL_Geographie.TabIndex = 4;
+            this.LBL_Geographie.Text = "label1";
+            // 
+            // LBL_ScoreGeographie
+            // 
+            this.LBL_ScoreGeographie.AutoSize = true;
+            this.LBL_ScoreGeographie.Location = new System.Drawing.Point(82, 46);
+            this.LBL_ScoreGeographie.Name = "LBL_ScoreGeographie";
+            this.LBL_ScoreGeographie.Size = new System.Drawing.Size(26, 13);
+            this.LBL_ScoreGeographie.TabIndex = 5;
+            this.LBL_ScoreGeographie.Text = "X/X";
+            // 
+            // LBL_Cinema
+            // 
+            this.LBL_Cinema.AutoSize = true;
+            this.LBL_Cinema.Location = new System.Drawing.Point(7, 59);
+            this.LBL_Cinema.Name = "LBL_Cinema";
+            this.LBL_Cinema.Size = new System.Drawing.Size(35, 13);
+            this.LBL_Cinema.TabIndex = 6;
+            this.LBL_Cinema.Text = "label1";
+            // 
+            // LBL_ScoreCinema
+            // 
+            this.LBL_ScoreCinema.AutoSize = true;
+            this.LBL_ScoreCinema.Location = new System.Drawing.Point(82, 59);
+            this.LBL_ScoreCinema.Name = "LBL_ScoreCinema";
+            this.LBL_ScoreCinema.Size = new System.Drawing.Size(26, 13);
+            this.LBL_ScoreCinema.TabIndex = 7;
+            this.LBL_ScoreCinema.Text = "X/X";
+            // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +283,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.PN_Choix.ResumeLayout(false);
             this.PN_Choix.PerformLayout();
+            this.GRB_Score.ResumeLayout(false);
+            this.GRB_Score.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,6 +305,14 @@
         private System.Windows.Forms.GroupBox GRB_Score;
         private System.Windows.Forms.Panel PN_Roulette;
         private System.Windows.Forms.Label LBL_Categorie;
+        private System.Windows.Forms.Label LBL_Histoire;
+        private System.Windows.Forms.Label LBL_ScoreScience;
+        private System.Windows.Forms.Label LBL_Science;
+        private System.Windows.Forms.Label LBL_ScoreHistoire;
+        private System.Windows.Forms.Label LBL_Geographie;
+        private System.Windows.Forms.Label LBL_ScoreCinema;
+        private System.Windows.Forms.Label LBL_Cinema;
+        private System.Windows.Forms.Label LBL_ScoreGeographie;
     }
 }
 
