@@ -320,16 +320,19 @@ namespace ClassesQuestionnaires
 
         private String TournerRoulette()
         {
-            Random rand = new Random();
-            int rnd = rand.Next(Categories.Count * 2) + Categories.Count;
-            int indexCouleur = 0;
-
             Color[] colors = new Color[5];
             colors[0] = Properties.Settings.Default.CatColor_AuChoix;
             colors[1] = Properties.Settings.Default.CatColor_Histoire;
             colors[2] = Properties.Settings.Default.CatColor_Science;
             colors[3] = Properties.Settings.Default.CatColor_Geographie;
             colors[4] = Properties.Settings.Default.CatColor_Cinema;
+
+            Random rand = new Random();
+            int tours = rand.Next(1, 3);
+            int rnd = rand.Next(colors.Length);
+            rnd += (tours * colors.Length);
+            int indexCouleur = 0;
+
 
             for (int i = 0; i < rnd; ++i)
             {
