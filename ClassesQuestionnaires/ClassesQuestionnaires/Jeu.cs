@@ -183,17 +183,19 @@ namespace ClassesQuestionnaires
         }
 
         private void PoserQuestion()
-        {
+        {   
+            RB_Rep1.Checked = true;
             char categorie = TournerRoulette()[0];
             PigerQuestion(categorie);
 
-            TB_Question.Text = QuestionPigee.Texte + " ?";
+            TB_Question.Text = QuestionPigee.Texte;
 
             RB_Rep1.Text = QuestionPigee.Reponses[0].Texte;
             RB_Rep2.Text = QuestionPigee.Reponses[1].Texte;
             RB_Rep3.Text = QuestionPigee.Reponses[2].Texte;
             RB_Rep4.Text = QuestionPigee.Reponses[3].Texte;
             BTN_Action.Enabled = true;
+            
         }
 
         private void ValiderReponse()
@@ -207,6 +209,7 @@ namespace ClassesQuestionnaires
                 if (JoueurAGagner())
                 {
                     MessageBox.Show(Joueurs[Courant].Alias + " a gagné !");
+                    this.Close();
                 }
             }
             else

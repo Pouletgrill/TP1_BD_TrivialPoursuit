@@ -134,3 +134,4 @@ C:\Users\201354694\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQ
 C:\Users\201354694\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
 C:\Users\201354694\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
 C:\Users\201354694\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
+C:\Users\PouletGrill\Documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.MenuJeu.resources
