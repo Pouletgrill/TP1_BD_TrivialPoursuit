@@ -69,8 +69,7 @@ namespace ClassesQuestionnaires
          }
          AjouterJoueur(participant);
          Jeu dlg = new Jeu(connection, participant);
-         dlg.Show();
-         this.Visible = false;
+         dlg.ShowDialog();
       }
 
       private void AjouterJoueur(List<String> participant)

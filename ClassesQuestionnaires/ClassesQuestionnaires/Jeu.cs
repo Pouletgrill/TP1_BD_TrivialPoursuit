@@ -245,7 +245,7 @@ namespace ClassesQuestionnaires
 
         private void MauvaiseReponse()
         {
-            MessageBox.Show("C'est au tour de " + Joueurs[Courant + 1], "Mauvaise Réponse !");
+            MessageBox.Show("C'est au tour de " + Joueurs[((Courant + 1) % Joueurs.Count)].Alias, "Mauvaise Réponse !");
             ProchainJoueur();
         }
 
@@ -302,12 +302,6 @@ namespace ClassesQuestionnaires
         private void BTN_Action_Click(object sender, EventArgs e)
         {
             ValiderReponse();
-        }
-
-        private void ModifierQuestionButton_Click(object sender, EventArgs e)
-        {
-            Gestion dlg = new Gestion(connection);
-            dlg.ShowDialog();
         }
 
         private String AfficherChoixCategorie()
