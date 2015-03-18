@@ -48,6 +48,7 @@
          // 
          // BTN_Jouer
          // 
+         this.BTN_Jouer.Enabled = false;
          this.BTN_Jouer.Location = new System.Drawing.Point(99, 192);
          this.BTN_Jouer.Name = "BTN_Jouer";
          this.BTN_Jouer.Size = new System.Drawing.Size(75, 23);
@@ -62,6 +63,7 @@
          this.TB_Joueur4.Name = "TB_Joueur4";
          this.TB_Joueur4.Size = new System.Drawing.Size(100, 20);
          this.TB_Joueur4.TabIndex = 1;
+         this.TB_Joueur4.TextChanged += new System.EventHandler(this.TB_Joueur1_TextChanged);
          // 
          // TB_Joueur3
          // 
@@ -69,6 +71,7 @@
          this.TB_Joueur3.Name = "TB_Joueur3";
          this.TB_Joueur3.Size = new System.Drawing.Size(100, 20);
          this.TB_Joueur3.TabIndex = 2;
+         this.TB_Joueur3.TextChanged += new System.EventHandler(this.TB_Joueur1_TextChanged);
          // 
          // TB_Joueur2
          // 
@@ -76,6 +79,7 @@
          this.TB_Joueur2.Name = "TB_Joueur2";
          this.TB_Joueur2.Size = new System.Drawing.Size(100, 20);
          this.TB_Joueur2.TabIndex = 3;
+         this.TB_Joueur2.TextChanged += new System.EventHandler(this.TB_Joueur1_TextChanged);
          // 
          // TB_Joueur1
          // 
@@ -83,6 +87,7 @@
          this.TB_Joueur1.Name = "TB_Joueur1";
          this.TB_Joueur1.Size = new System.Drawing.Size(100, 20);
          this.TB_Joueur1.TabIndex = 4;
+         this.TB_Joueur1.TextChanged += new System.EventHandler(this.TB_Joueur1_TextChanged);
          // 
          // label1
          // 
@@ -123,9 +128,25 @@
          // numericUpDown1
          // 
          this.numericUpDown1.Location = new System.Drawing.Point(136, 27);
+         this.numericUpDown1.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+         this.numericUpDown1.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
          this.numericUpDown1.Name = "numericUpDown1";
          this.numericUpDown1.Size = new System.Drawing.Size(35, 20);
          this.numericUpDown1.TabIndex = 9;
+         this.numericUpDown1.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+         this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
          // 
          // label5
          // 

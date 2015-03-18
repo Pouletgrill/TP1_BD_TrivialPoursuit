@@ -133,6 +133,7 @@
          // 
          // BTN_Action
          // 
+         this.BTN_Action.Enabled = false;
          this.BTN_Action.Location = new System.Drawing.Point(331, 305);
          this.BTN_Action.Name = "BTN_Action";
          this.BTN_Action.Size = new System.Drawing.Size(75, 23);

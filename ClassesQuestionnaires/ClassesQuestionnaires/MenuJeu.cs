@@ -55,11 +55,88 @@ namespace ClassesQuestionnaires
 
       private void BTN_Jouer_Click(object sender, EventArgs e)
       {
-         List<String> gion;
-         gion = new List<String>();
-         gion.Add("salut");
-         gion.Add("Bye Bye");
-         Jeu dlg = new Jeu(connection,gion);
+         List<String> participant;
+         participant = new List<String>();
+         participant.Add(TB_Joueur1.Text);
+         participant.Add(TB_Joueur2.Text);
+         if (TB_Joueur3.Enabled)
+         {
+            participant.Add(TB_Joueur3.Text);
+         }
+         if (TB_Joueur4.Enabled)
+         {
+            participant.Add(TB_Joueur4.Text);
+         }
+         AjouterJoueur(participant);
+         Jeu dlg = new Jeu(connection, participant);
+         dlg.Show();
+         this.Visible = false;
+      }
+
+      private void AjouterJoueur(List<String> participant)
+      {
+         for (int i = 0; i< participant.Count; i++)
+         {
+            try
+            {
+               OracleCommand oracJoueur = new OracleCommand("PKG_GESTION", connection);
+               oracJoueur.CommandType = CommandType.StoredProcedure;
+               oracJoueur.CommandText = "PKG_GESTION.INSERTIONJOUEUR";
+
+               OracleParameter oraParam = new OracleParameter("NOM", OracleDbType.Varchar2,30);
+               oraParam.Direction = ParameterDirection.Input;
+               oraParam.Value = participant[i];
+               oracJoueur.Parameters.Add(oraParam);
+
+               oracJoueur.ExecuteNonQuery();
+
+            }
+            catch (OracleException ex)
+            {
+               //Too bad
+               MessageBox.Show(participant[i] + " existe deja");
+            }
+         }
+      }
+
+      private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+      {
+         switch ((int)numericUpDown1.Value)
+         {
+            case 3:
+               TB_Joueur4.Enabled = false;
+               TB_Joueur3.Enabled = true;
+               break;
+            case 4:
+               TB_Joueur4.Enabled = TB_Joueur3.Enabled = true;               
+               break;
+            default:
+               TB_Joueur4.Enabled = TB_Joueur3.Enabled = false;
+               break;
+         }
+         UpdateValue();
+      }
+
+      private void UpdateValue()
+      {
+         bool valide = TB_Joueur1.Text != "" && TB_Joueur2.Text != "";
+
+         if (valide && numericUpDown1.Value >= 3)
+         {
+            valide = TB_Joueur3.Text != "";
+         }
+
+         if (valide && numericUpDown1.Value >= 4)
+         {
+            valide = TB_Joueur4.Text != "";
+         }
+
+         BTN_Jouer.Enabled = valide;
+      }
+
+      private void TB_Joueur1_TextChanged(object sender, EventArgs e)
+      {
+         UpdateValue();
       }
 
    }
