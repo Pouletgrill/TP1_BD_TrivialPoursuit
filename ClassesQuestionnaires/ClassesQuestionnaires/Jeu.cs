@@ -28,7 +28,7 @@ namespace ClassesQuestionnaires
 
         public OracleConnection connection;     // ========== TO MOVE =========
 
-        public Jeu(int nbJoueurs)
+        public Jeu(OracleConnection Connexion, List<String> participants)
         {
             InitializeComponent();
             Joueurs = new List<Joueur>();
