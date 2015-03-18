@@ -28,6 +28,7 @@
       /// </summary>
       private void InitializeComponent()
       {
+         this.components = new System.ComponentModel.Container();
          this.DGV_Question = new System.Windows.Forms.DataGridView();
          this.BTN_Ajouter = new System.Windows.Forms.Button();
          this.BTN_Modifier = new System.Windows.Forms.Button();
@@ -35,9 +36,14 @@
          this.BTN_NMotPasse = new System.Windows.Forms.Button();
          this.groupBox1 = new System.Windows.Forms.GroupBox();
          this.groupBox2 = new System.Windows.Forms.GroupBox();
+         this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+         this.asfasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.asfasfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          ((System.ComponentModel.ISupportInitialize)(this.DGV_Question)).BeginInit();
          this.groupBox1.SuspendLayout();
          this.groupBox2.SuspendLayout();
+         this.contextMenuStrip1.SuspendLayout();
          this.SuspendLayout();
          // 
          // DGV_Question
@@ -50,6 +56,7 @@
          this.DGV_Question.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
          this.DGV_Question.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
          this.DGV_Question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         this.DGV_Question.ContextMenuStrip = this.contextMenuStrip1;
          this.DGV_Question.Location = new System.Drawing.Point(12, 63);
          this.DGV_Question.MultiSelect = false;
          this.DGV_Question.Name = "DGV_Question";
@@ -58,6 +65,7 @@
          this.DGV_Question.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
          this.DGV_Question.Size = new System.Drawing.Size(388, 251);
          this.DGV_Question.TabIndex = 4;
+         this.DGV_Question.DoubleClick += new System.EventHandler(this.DGV_Question_Modif_DoubleClick);
          // 
          // BTN_Ajouter
          // 
@@ -121,6 +129,36 @@
          this.groupBox2.TabStop = false;
          this.groupBox2.Text = "Gestion";
          // 
+         // contextMenuStrip1
+         // 
+         this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asfasToolStripMenuItem,
+            this.asfasfToolStripMenuItem,
+            this.supprimerToolStripMenuItem});
+         this.contextMenuStrip1.Name = "contextMenuStrip1";
+         this.contextMenuStrip1.Size = new System.Drawing.Size(130, 70);
+         // 
+         // asfasToolStripMenuItem
+         // 
+         this.asfasToolStripMenuItem.Name = "asfasToolStripMenuItem";
+         this.asfasToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+         this.asfasToolStripMenuItem.Text = "Ajouter";
+         this.asfasToolStripMenuItem.Click += new System.EventHandler(this.ajouterToolStripMenuItem_Click);
+         // 
+         // asfasfToolStripMenuItem
+         // 
+         this.asfasfToolStripMenuItem.Name = "asfasfToolStripMenuItem";
+         this.asfasfToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+         this.asfasfToolStripMenuItem.Text = "Modifier";
+         this.asfasfToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
+         // 
+         // supprimerToolStripMenuItem
+         // 
+         this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+         this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+         this.supprimerToolStripMenuItem.Text = "Supprimer";
+         this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
+         // 
          // Gestion
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,6 +174,7 @@
          ((System.ComponentModel.ISupportInitialize)(this.DGV_Question)).EndInit();
          this.groupBox1.ResumeLayout(false);
          this.groupBox2.ResumeLayout(false);
+         this.contextMenuStrip1.ResumeLayout(false);
          this.ResumeLayout(false);
 
       }
@@ -149,5 +188,9 @@
       private System.Windows.Forms.Button BTN_NMotPasse;
       private System.Windows.Forms.GroupBox groupBox1;
       private System.Windows.Forms.GroupBox groupBox2;
+      private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+      private System.Windows.Forms.ToolStripMenuItem asfasToolStripMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem asfasfToolStripMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
    }
 }

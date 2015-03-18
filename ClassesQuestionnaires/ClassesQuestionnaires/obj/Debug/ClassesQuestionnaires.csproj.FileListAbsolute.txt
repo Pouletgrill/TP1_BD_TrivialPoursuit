@@ -50,7 +50,6 @@ C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\C
 C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Jeu.resources
 C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Properties.Resources.resources
 C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csproj.GenerateResource.Cache
-C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.csprojResolveAssemblyReference.cache
 C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.Gestion.resources
 C:\Users\201354694\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.AdminConnect.resources
 \\clg.priv\Ens\El\1\200942341\Mes documents\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\ClassesQuestionnaires.exe.config
