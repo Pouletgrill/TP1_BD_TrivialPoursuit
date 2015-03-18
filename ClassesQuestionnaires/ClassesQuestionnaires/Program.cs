@@ -16,7 +16,7 @@ namespace ClassesQuestionnaires
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Jeu(2));
+            Application.Run(new MenuJeu());
         }
     }
 }

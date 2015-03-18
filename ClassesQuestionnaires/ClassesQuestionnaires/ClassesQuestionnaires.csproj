@@ -70,6 +70,12 @@
       <DependentUpon>Jeu.cs</DependentUpon>
     </Compile>
     <Compile Include="Joueur.cs" />
+    <Compile Include="MenuJeu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuJeu.Designer.cs">
+      <DependentUpon>MenuJeu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifierMotDePasse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Jeu.resx">
       <DependentUpon>Jeu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuJeu.resx">
+      <DependentUpon>MenuJeu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierMotDePasse.resx">
       <DependentUpon>ModifierMotDePasse.cs</DependentUpon>
