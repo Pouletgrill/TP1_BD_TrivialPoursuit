@@ -58,6 +58,7 @@ namespace ClassesQuestionnaires
          List<String> gion;
          gion = new List<String>();
          gion.Add("salut");
+         gion.Add("Bye Bye");
          Jeu dlg = new Jeu(connection,gion);
       }
 
