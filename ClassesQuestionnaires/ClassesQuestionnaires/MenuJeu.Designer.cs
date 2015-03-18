@@ -54,6 +54,7 @@
          this.BTN_Jouer.TabIndex = 0;
          this.BTN_Jouer.Text = "Jouer !";
          this.BTN_Jouer.UseVisualStyleBackColor = true;
+         this.BTN_Jouer.Click += new System.EventHandler(this.BTN_Jouer_Click);
          // 
          // TB_Joueur4
          // 
@@ -156,7 +157,7 @@
          // gestionToolStripMenuItem
          // 
          this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
-         this.gestionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+         this.gestionToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
          this.gestionToolStripMenuItem.Text = "Gestion";
          this.gestionToolStripMenuItem.Click += new System.EventHandler(this.gestionToolStripMenuItem_Click);
          // 
@@ -180,6 +181,7 @@
          this.MainMenuStrip = this.menuStrip1;
          this.Name = "MenuJeu";
          this.Text = "MenuJeu";
+         this.Load += new System.EventHandler(this.MenuJeu_Load);
          ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
          this.menuStrip1.ResumeLayout(false);
          this.menuStrip1.PerformLayout();

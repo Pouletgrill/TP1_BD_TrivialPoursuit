@@ -13,53 +13,27 @@ namespace ClassesQuestionnaires
 {
     public partial class Jeu : Form
     {
+        public OracleConnection connection;
         List<Joueur> Joueurs;
         int Courant;
         Question QuestionPigee;
-
         List<String> Categories;
 
-        private static String orclUser = "riouxfra";
-        public String connectionString = "Data Source=(DESCRIPTION="    // ========== TO MOVE =========
-                               + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)"
-                               + "(HOST=205.237.244.251)(PORT=1521)))"
-                               + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)));"
-                               + "User Id=" + orclUser + ";Password=ORACLE1";
-
-        public OracleConnection connection;     // ========== TO MOVE =========
-
         public Jeu(OracleConnection Connexion, List<String> participants)
-        {
+        {           
             InitializeComponent();
             Joueurs = new List<Joueur>();
             Courant = -1; // Au form load, on call ProchainJoueur qui fait +1 donc 0
-
+            connection = Connexion;
             Categories = new List<string>();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Connecter();
             ResetScores();
             ChargerJoueur("Walase", 0);
             ChargerJoueur("GroMite", 1);
             ChargerCategories();
             ProchainJoueur();
-        }
-
-        private void Connecter() // ========== TO MOVE =========
-        {
-            connection = new OracleConnection(connectionString);
-            connection.ConnectionString = connectionString;
-
-            try
-            {
-                connection.Open();
-                //MessageBox.Show(connection.State.ToString());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur de connection");
-            }
         }
 
         private void ChargerCategories()
