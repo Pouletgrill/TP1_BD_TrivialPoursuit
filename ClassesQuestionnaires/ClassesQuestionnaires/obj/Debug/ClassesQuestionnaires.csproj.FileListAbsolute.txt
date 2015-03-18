@@ -134,3 +134,4 @@ C:\Users\201354694\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQ
 C:\Users\201354694\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\bin\Debug\Oracle.DataAccess.dll
 C:\Users\201354694\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.exe
 C:\Users\201354694\Desktop\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.pdb
+C:\Users\200942341\Desktop\GitHub\TP1_BD_TrivialPoursuit\ClassesQuestionnaires\ClassesQuestionnaires\obj\Debug\ClassesQuestionnaires.MenuJeu.resources

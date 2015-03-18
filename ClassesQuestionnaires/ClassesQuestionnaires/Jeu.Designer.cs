@@ -59,7 +59,7 @@
             this.TB_Question.Multiline = true;
             this.TB_Question.Name = "TB_Question";
             this.TB_Question.ReadOnly = true;
-            this.TB_Question.Size = new System.Drawing.Size(259, 54);
+            this.TB_Question.Size = new System.Drawing.Size(393, 54);
             this.TB_Question.TabIndex = 0;
             // 
             // PN_Choix
@@ -70,7 +70,7 @@
             this.PN_Choix.Controls.Add(this.RB_Rep4);
             this.PN_Choix.Location = new System.Drawing.Point(13, 199);
             this.PN_Choix.Name = "PN_Choix";
-            this.PN_Choix.Size = new System.Drawing.Size(259, 100);
+            this.PN_Choix.Size = new System.Drawing.Size(393, 100);
             this.PN_Choix.TabIndex = 1;
             // 
             // RB_Rep1
@@ -87,7 +87,7 @@
             // RB_Rep2
             // 
             this.RB_Rep2.AutoSize = true;
-            this.RB_Rep2.Location = new System.Drawing.Point(171, 20);
+            this.RB_Rep2.Location = new System.Drawing.Point(236, 20);
             this.RB_Rep2.Name = "RB_Rep2";
             this.RB_Rep2.Size = new System.Drawing.Size(85, 17);
             this.RB_Rep2.TabIndex = 1;
@@ -109,7 +109,7 @@
             // RB_Rep4
             // 
             this.RB_Rep4.AutoSize = true;
-            this.RB_Rep4.Location = new System.Drawing.Point(171, 67);
+            this.RB_Rep4.Location = new System.Drawing.Point(236, 67);
             this.RB_Rep4.Name = "RB_Rep4";
             this.RB_Rep4.Size = new System.Drawing.Size(85, 17);
             this.RB_Rep4.TabIndex = 3;
@@ -137,7 +137,7 @@
             // 
             // BTN_Action
             // 
-            this.BTN_Action.Location = new System.Drawing.Point(197, 305);
+            this.BTN_Action.Location = new System.Drawing.Point(331, 305);
             this.BTN_Action.Name = "BTN_Action";
             this.BTN_Action.Size = new System.Drawing.Size(75, 23);
             this.BTN_Action.TabIndex = 5;
@@ -147,7 +147,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 305);
+            this.button1.Location = new System.Drawing.Point(13, 305);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 23);
             this.button1.TabIndex = 6;
@@ -193,7 +193,7 @@
             // LBL_Science
             // 
             this.LBL_Science.AutoSize = true;
-            this.LBL_Science.Location = new System.Drawing.Point(7, 33);
+            this.LBL_Science.Location = new System.Drawing.Point(7, 39);
             this.LBL_Science.Name = "LBL_Science";
             this.LBL_Science.Size = new System.Drawing.Size(46, 13);
             this.LBL_Science.TabIndex = 2;
@@ -202,7 +202,7 @@
             // LBL_ScoreScience
             // 
             this.LBL_ScoreScience.AutoSize = true;
-            this.LBL_ScoreScience.Location = new System.Drawing.Point(82, 33);
+            this.LBL_ScoreScience.Location = new System.Drawing.Point(82, 39);
             this.LBL_ScoreScience.Name = "LBL_ScoreScience";
             this.LBL_ScoreScience.Size = new System.Drawing.Size(26, 13);
             this.LBL_ScoreScience.TabIndex = 3;
@@ -211,7 +211,7 @@
             // LBL_Geographie
             // 
             this.LBL_Geographie.AutoSize = true;
-            this.LBL_Geographie.Location = new System.Drawing.Point(7, 46);
+            this.LBL_Geographie.Location = new System.Drawing.Point(7, 57);
             this.LBL_Geographie.Name = "LBL_Geographie";
             this.LBL_Geographie.Size = new System.Drawing.Size(62, 13);
             this.LBL_Geographie.TabIndex = 4;
@@ -220,7 +220,7 @@
             // LBL_ScoreGeographie
             // 
             this.LBL_ScoreGeographie.AutoSize = true;
-            this.LBL_ScoreGeographie.Location = new System.Drawing.Point(82, 46);
+            this.LBL_ScoreGeographie.Location = new System.Drawing.Point(82, 57);
             this.LBL_ScoreGeographie.Name = "LBL_ScoreGeographie";
             this.LBL_ScoreGeographie.Size = new System.Drawing.Size(26, 13);
             this.LBL_ScoreGeographie.TabIndex = 5;
@@ -229,7 +229,7 @@
             // LBL_Cinema
             // 
             this.LBL_Cinema.AutoSize = true;
-            this.LBL_Cinema.Location = new System.Drawing.Point(7, 59);
+            this.LBL_Cinema.Location = new System.Drawing.Point(7, 75);
             this.LBL_Cinema.Name = "LBL_Cinema";
             this.LBL_Cinema.Size = new System.Drawing.Size(42, 13);
             this.LBL_Cinema.TabIndex = 6;
@@ -238,7 +238,7 @@
             // LBL_ScoreCinema
             // 
             this.LBL_ScoreCinema.AutoSize = true;
-            this.LBL_ScoreCinema.Location = new System.Drawing.Point(82, 59);
+            this.LBL_ScoreCinema.Location = new System.Drawing.Point(82, 75);
             this.LBL_ScoreCinema.Name = "LBL_ScoreCinema";
             this.LBL_ScoreCinema.Size = new System.Drawing.Size(26, 13);
             this.LBL_ScoreCinema.TabIndex = 7;
@@ -247,7 +247,7 @@
             // PN_Roulette
             // 
             this.PN_Roulette.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PN_Roulette.Location = new System.Drawing.Point(133, 35);
+            this.PN_Roulette.Location = new System.Drawing.Point(270, 35);
             this.PN_Roulette.Name = "PN_Roulette";
             this.PN_Roulette.Size = new System.Drawing.Size(136, 100);
             this.PN_Roulette.TabIndex = 8;
@@ -258,7 +258,7 @@
             // LBL_Categorie
             // 
             this.LBL_Categorie.AutoSize = true;
-            this.LBL_Categorie.Location = new System.Drawing.Point(130, 19);
+            this.LBL_Categorie.Location = new System.Drawing.Point(354, 19);
             this.LBL_Categorie.Name = "LBL_Categorie";
             this.LBL_Categorie.Size = new System.Drawing.Size(52, 13);
             this.LBL_Categorie.TabIndex = 9;
@@ -268,7 +268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 340);
+            this.ClientSize = new System.Drawing.Size(418, 340);
             this.Controls.Add(this.LBL_Categorie);
             this.Controls.Add(this.PN_Roulette);
             this.Controls.Add(this.GRB_Score);
