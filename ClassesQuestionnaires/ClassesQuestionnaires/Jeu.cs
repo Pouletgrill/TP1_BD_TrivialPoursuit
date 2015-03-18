@@ -336,7 +336,7 @@ namespace ClassesQuestionnaires
 
             for (int i = 0; i < rnd; ++i)
             {
-                indexCouleur = i % Categories.Count;
+                indexCouleur = i % colors.Length;
                 PN_Roulette.BackColor = colors[indexCouleur];
                 PN_Roulette.Refresh();
                 System.Threading.Thread.Sleep(100 + (i * i));
