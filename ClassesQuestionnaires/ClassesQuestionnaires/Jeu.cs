@@ -179,6 +179,24 @@ namespace ClassesQuestionnaires
             }
         }
 
+        private bool JoueurAGagner()
+        {
+            OracleCommand gagner = new OracleCommand("GAGNER", connection);
+            gagner.CommandType = CommandType.StoredProcedure;
+            gagner.CommandText = "PKG_JEU.CATEGORIESRESTANTES";
+
+            OracleParameter pNum = new OracleParameter("PNUM", OracleDbType.Int32);
+            pNum.Direction = ParameterDirection.ReturnValue;
+
+            OracleParameter pJoueur = new OracleParameter("PJOUEUR", OracleDbType.Varchar2, 30);
+            pJoueur.Direction = ParameterDirection.Input;
+            pJoueur.Value = Joueurs[Courant].Alias;
+
+            gagner.ExecuteNonQuery();
+
+            return pNum.Value == 0;
+        }
+
         private void PoserQuestion()
         {
             char categorie = TournerRoulette()[0];
