@@ -187,14 +187,16 @@ namespace ClassesQuestionnaires
 
             OracleParameter pNum = new OracleParameter("PNUM", OracleDbType.Int32);
             pNum.Direction = ParameterDirection.ReturnValue;
+            gagner.Parameters.Add(pNum);
 
             OracleParameter pJoueur = new OracleParameter("PJOUEUR", OracleDbType.Varchar2, 30);
             pJoueur.Direction = ParameterDirection.Input;
             pJoueur.Value = Joueurs[Courant].Alias;
+            gagner.Parameters.Add(pJoueur);
 
             gagner.ExecuteNonQuery();
 
-            return pNum.Value == 0;
+            return int.Parse(pNum.Value.ToString()) == 0;
         }
 
         private void PoserQuestion()
@@ -219,6 +221,11 @@ namespace ClassesQuestionnaires
             if (QuestionPigee.ValiderReponse(Joueurs[Courant].Repondre(PN_Choix)))
             {
                 BonneReponse();
+
+                if (JoueurAGagner())
+                {
+                    MessageBox.Show(Joueurs[Courant].Alias + " a gagné !");
+                }
             }
             else
             {
