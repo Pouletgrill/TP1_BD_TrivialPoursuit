@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ClassesQuestionnaires.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PasswordAdmin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CatColor_AuChoix" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="CatColor_Science" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkSalmon</Value>
+    </Setting>
+    <Setting Name="CatColor_Histoire" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LawnGreen</Value>
+    </Setting>
+    <Setting Name="CatColor_Geographie" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">MediumAquamarine</Value>
+    </Setting>
+    <Setting Name="CatColor_Cinema" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Yellow</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
