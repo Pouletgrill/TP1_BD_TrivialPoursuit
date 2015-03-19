@@ -68,6 +68,7 @@ namespace ClassesQuestionnaires
             participant.Add(TB_Joueur4.Text);
          }
          AjouterJoueur(participant);
+
          Jeu dlg = new Jeu(connection, participant);
          dlg.ShowDialog();
       }
