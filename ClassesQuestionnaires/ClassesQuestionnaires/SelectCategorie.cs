@@ -24,6 +24,12 @@ namespace ClassesQuestionnaires
             PNL_Science.BackColor = Properties.Settings.Default.CatColor_Science;
             PNL_Geographie.BackColor = Properties.Settings.Default.CatColor_Geographie;
             PNL_Cinema.BackColor = Properties.Settings.Default.CatColor_Cinema;
+
+            ToolTip tooltip = new ToolTip();
+            tooltip.SetToolTip(PNL_Histoire, "Histoire");
+            tooltip.SetToolTip(PNL_Science, "Science");
+            tooltip.SetToolTip(PNL_Geographie, "Géographie");
+            tooltip.SetToolTip(PNL_Cinema, "Cinema");
         }
 
         private void Panel_MouseDown(object sender, MouseEventArgs e)
